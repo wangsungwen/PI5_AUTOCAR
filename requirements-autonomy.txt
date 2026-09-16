@@ -1,0 +1,8 @@
+numpy>=1.26,<3
+opencv-python-headless>=4.10
+onnxruntime>=1.19
+# On Raspberry Pi, install torch/torchvision from the PyTorch CPU index first.
+# Never force-reinstall this file together with Ultralytics, or pip may select
+# the multi-GB PyPI CUDA torch build. scripts/install_pi.sh uses the safe order.
+ultralytics>=8.3
+ncnn

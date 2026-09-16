@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <title>Pi5 AutoCAR</title><link rel="stylesheet" href="/style.css"><link rel="stylesheet" href="/gimbal.css"><link rel="stylesheet" href="/autopilot.css"><link rel="stylesheet" href="/detection.css">
+</head>
+<body>
+  <main>
+    <header><div><p class="eyebrow">RASPBERRY PI 5</p><h1>AutoCAR Control</h1></div><span id="connection" class="badge bad">離線</span></header>
+    <section class="card status"><div><small>車體</small><strong id="vehicle">停用</strong></div><div><small>方向</small><strong id="direction">STOP</strong></div><div><small>相機</small><strong id="camera">待機</strong></div></section>
+    <section class="card">
+      <div class="section-title"><h2>車體控制</h2><label class="switch"><input id="enable" type="checkbox"><span></span></label></div>
+      <p class="hint">啟用後四輪定速前進。F 加速、B 減速、L/R 逐步轉向；每按一次調整一格，放開維持設定。方向鍵／WASD 亦可操作，空白鍵急停。</p>
+      <div class="drive-metrics" aria-live="polite">
+        <div><small>轉速設定（PWM）</small><strong id="speedValue">0%</strong></div>
+        <div><small>轉向設定角度</small><strong id="turnValue">0° 直行</strong></div>
+      </div>
+      <p id="wheelValues" class="hint">A: 0% · B: 0% · C: 0% · D: 0%</p>
+      <p id="driveSteps" class="hint"></p>
+      <p class="hint">PWM 為輸出比例，非實測 RPM。角度為差速轉向設定，非實測車頭角度；左彎降低 A/C 輸出，右彎降低 B/D 輸出。</p>
+      <div class="pad">
+        <button data-dir="forward" class="up" aria-label="F 加速">F +</button>
+        <button data-dir="left" class="left" aria-label="L 左轉">L ◀</button>
+        <button id="stop" class="stop" aria-label="停止">STOP</button>
+        <button data-dir="right" class="right" aria-label="R 右轉">R ▶</button>
+        <button data-dir="backward" class="down" aria-label="B 減速">B −</button>
+      </div>
+      <button id="straight" class="straight">轉向歸零 · 直行</button>
+      <p class="hint">STOP 後 F 可從 0% 逐步起步；切換視窗、隱藏頁面或控制連線逾時會停止。</p>
+    </section>
+    <section class="card camera-view">
+      <div class="section-title detection-heading">
+        <div><h2>相機即時畫面</h2><p id="previewMode" class="hint compact">原始畫面 · 推論已關閉</p></div>
+        <div class="detection-toggle"><div class="detection-toggle-copy"><strong>視覺推論</strong><span id="previewState" class="camera-state">連線中</span></div><label class="switch" title="啟用或關閉 YOLO26 視覺推論"><input id="detection" type="checkbox" aria-label="視覺推論"><span></span></label></div>
+      </div>
+      <div class="preview-wrap">
+        <img id="preview" src="/api/camera/stream" alt="Pi Camera 即時畫面">
+        <div id="previewError" class="preview-error" hidden><strong>無法取得相機畫面</strong><button id="retryPreview">重新連線</button></div>
+      </div>
+      <div class="detection-status"><span>推論 <strong id="detectionFps">已關閉</strong></span><span>物件 <strong id="detectionCount">—</strong></span><span class="detection-labels">辨識 <strong id="detectionLabels">顯示原始畫面</strong></span></div>
+      <div class="detection-profile"><label for="detectionProfile">推論模型與固定尺寸</label><select id="detectionProfile" aria-label="推論模型與固定尺寸"></select><button id="applyDetectionProfile">套用</button></div>
+      <div class="gimbal">
+        <div class="gimbal-title"><strong>雲台控制</strong><span id="gimbalPosition">水平 0° · 俯仰 0°</span></div>
+        <div class="gimbal-pad">
+          <button data-gimbal="tilt" data-delta="10" class="g-up" aria-label="上仰">▲</button>
+          <button data-gimbal="pan" data-delta="-10" class="g-left" aria-label="左旋">◀</button>
+          <button id="gimbalCenter" class="g-center" aria-label="雲台置中">●</button>
+          <button data-gimbal="pan" data-delta="10" class="g-right" aria-label="右旋">▶</button>
+          <button data-gimbal="tilt" data-delta="-10" class="g-down" aria-label="下俯">▼</button>
+        </div>
+      </div>
+    </section>
+    <section class="card camera-card"><div><h2>Pi Camera 錄影</h2><p id="file" class="hint">尚未建立錄影</p></div><button id="record" class="record">● 開始錄影</button></section>
+    <section class="card auto-card">
+      <div class="section-title"><div><h2>自動駕駛</h2><p class="hint">車道 PID 高頻循跡；模型存在時同步辨識紅綠燈與停止標誌。</p></div><label class="switch"><input id="autopilot" type="checkbox"><span></span></label></div>
+      <div class="auto-status"><span>號誌 <strong id="traffic">NONE</strong></span><span>車道信心 <strong id="laneConfidence">0%</strong></span><span>轉向 <strong id="steering">0.000</strong></span><span>FPS <strong id="autoFps">0</strong></span></div>
+      <p id="autoError" class="hint"></p>
+    </section>
+    <p id="message" role="status"></p>
+  </main><script src="/app.js"></script>
+</body></html>

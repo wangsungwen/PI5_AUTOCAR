@@ -1,0 +1,2 @@
+# Web server uses Python standard library.
+# gpiozero and picamera2 are installed from Raspberry Pi OS packages.

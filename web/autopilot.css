@@ -1,0 +1,10 @@
+.auto-status {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 14px;
+}
+.auto-status span { background: rgba(255,255,255,.05); border-radius: 10px; padding: 10px; }
+.auto-status strong { display: block; margin-top: 4px; }
+.auto-card .section-title > div { max-width: 80%; }
+#autoError { color: #ff8b8b; }

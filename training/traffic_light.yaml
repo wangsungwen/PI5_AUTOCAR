@@ -1,0 +1,8 @@
+path: ../datasets/traffic
+train: images/train
+val: images/val
+names:
+  0: red_light
+  1: yellow_light
+  2: green_light
+  3: stop_sign

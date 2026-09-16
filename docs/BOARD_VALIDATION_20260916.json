@@ -1,0 +1,119 @@
+{
+  "checked_at": "2026-09-16T11:33:45.954530+08:00",
+  "board": "192.168.0.160",
+  "user_feedback": "使用者確認可以正常操作",
+  "status": {
+    "vehicle": {
+      "enabled": false,
+      "direction": "stop",
+      "backend": "pca9685",
+      "speed_percent": 0,
+      "steering_degrees": 0,
+      "speed_step": 5,
+      "steering_step": 5,
+      "steering_max": 45,
+      "wheel_pwm": {
+        "A": 0,
+        "B": 0,
+        "C": 0,
+        "D": 0
+      }
+    },
+    "camera": {
+      "recording": false,
+      "preview": true,
+      "file": null,
+      "error": null
+    },
+    "detection": {
+      "enabled": true,
+      "running": true,
+      "fps": 29.5,
+      "count": 0,
+      "labels": "",
+      "model": "models/yolo26n_320_ncnn_model",
+      "imgsz": 320,
+      "profiles": [
+        {
+          "model": "models/yolo26l_320_ncnn_model",
+          "imgsz": 320,
+          "name": "yolo26l_320_ncnn_model (320×320)"
+        },
+        {
+          "model": "models/yolo26n_320_ncnn_model",
+          "imgsz": 320,
+          "name": "yolo26n_320_ncnn_model (320×320)"
+        },
+        {
+          "model": "models/yolo26l_640_ncnn_model",
+          "imgsz": 640,
+          "name": "yolo26l_640_ncnn_model (640×640)"
+        },
+        {
+          "model": "models/yolo26n_ncnn_model",
+          "imgsz": 640,
+          "name": "yolo26n_ncnn_model (640×640)"
+        }
+      ],
+      "runtime_ready": true,
+      "error": null
+    },
+    "gimbal": {
+      "pan": 0,
+      "tilt": 0,
+      "physical_pan": 0,
+      "physical_tilt": -80,
+      "pan_invert": false,
+      "tilt_invert": true,
+      "tilt_min": -40,
+      "tilt_max": 10,
+      "backend": "pca9685",
+      "pan_channel": 12,
+      "tilt_channel": 13
+    },
+    "autopilot": {
+      "enabled": false,
+      "traffic": "NONE",
+      "traffic_confidence": 0.0,
+      "lane_error": 0.0,
+      "lane_confidence": 0.0,
+      "steering": 0.0,
+      "fps": 0.0,
+      "error": null
+    }
+  },
+  "file_checks": {
+    "autocar/config.py": {
+      "local_sha256": "63a00eeb6178c80f4375ff57ea4964602339af35df3af68c3215227ba745b900",
+      "matches_deployed_package": true
+    },
+    "autocar/motor.py": {
+      "local_sha256": "2982a76009843cb8d73ba9a83f2e7684a193fc2fdb866465692a304103043d07",
+      "matches_deployed_package": true
+    },
+    "autocar/autopilot.py": {
+      "local_sha256": "727c2d742a2486f1bfa36a65dbc7b0510fb8cd4bcfe07fa12b455b0e608377e3",
+      "matches_deployed_package": true
+    },
+    "autocar/server.py": {
+      "local_sha256": "386742bcb54be63d6615223d8f7b176b1337fce7d2cfc0f35774eced511f58a6",
+      "matches_deployed_package": true
+    },
+    "web/app.js": {
+      "local_sha256": "87041df2e30384ce8071f58b417e7239a2e8446f4e8be7c77f62399de57dfbe7",
+      "matches_deployed_package": true,
+      "http_sha256": "87041df2e30384ce8071f58b417e7239a2e8446f4e8be7c77f62399de57dfbe7"
+    },
+    "web/index.html": {
+      "local_sha256": "f0555181a6fdb966e43af1456d7a47cf2e5951260070464f33c31b2953c7fb22",
+      "matches_deployed_package": true,
+      "http_sha256": "f0555181a6fdb966e43af1456d7a47cf2e5951260070464f33c31b2953c7fb22"
+    },
+    "web/style.css": {
+      "local_sha256": "3d8b3d7bd20b85781b919df77e1632425387b186e8b641ff547f7ef026e85217",
+      "matches_deployed_package": true,
+      "http_sha256": "3d8b3d7bd20b85781b919df77e1632425387b186e8b641ff547f7ef026e85217"
+    }
+  },
+  "limits": "後端檔案未透過 SSH 讀取；以部署包雜湊與新版狀態 API 交叉確認。FPS 是查詢當下數值。"
+}

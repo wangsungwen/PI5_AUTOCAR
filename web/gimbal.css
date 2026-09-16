@@ -1,0 +1,7 @@
+.gimbal{display:flex;justify-content:space-between;align-items:center;gap:18px;margin-top:16px;padding-top:16px;border-top:1px solid var(--line)}
+.gimbal-title strong,.gimbal-title span{display:block}
+.gimbal-title span{color:var(--muted);font-size:12px;margin-top:6px}
+.gimbal-pad{display:grid;grid-template:repeat(3,38px)/repeat(3,38px);gap:5px}
+.gimbal-pad button{border:0;border-radius:10px;background:#24362f;color:var(--text);cursor:pointer;font-size:14px}
+.gimbal-pad button:active{background:var(--green);color:#07140e}
+.g-up{grid-area:1/2}.g-left{grid-area:2/1}.g-center{grid-area:2/2}.g-right{grid-area:2/3}.g-down{grid-area:3/2}
