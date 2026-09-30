@@ -17,3 +17,5 @@ runs/
 *.mp4
 *.avi
 *.log
+.build_artifacts/
+.codex-finalizer/

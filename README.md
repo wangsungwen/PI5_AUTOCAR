@@ -35,11 +35,11 @@ Raspberry Pi 5 電腦視覺自走車的基礎架構，包含：
 
 ```bash
 cd ~/RPI5_AutoCAR
-chmod +x scripts/install_pi.sh
-sudo ./scripts/install_pi.sh
+sudo bash scripts/install.sh
 ```
 
-完成後開啟 `http://<Pi-IP>:8000`。目前範例為 `http://192.168.0.160:8000`。
+完成後開啟 `http://<Pi-IP>:8000`。安裝器自動使用 sudo 發起帳號，不限制 hostname 或帳號名稱。
+完整解壓縮步驟、指定帳號及舊版升級請見[通用安裝說明](docs/PORTABLE_INSTALL_ZH_TW.md)。
 
 ### YOLO26 畫框預覽模型
 
@@ -166,7 +166,7 @@ sudo journalctl -u autocar -f
 
 部署前可用 `sudo i2cdetect -y 1` 確認 `0x40` 裝置存在。
 
-錄影儲存在 `/home/rpi5/Videos/autocar`。服務狀態：
+新安裝的錄影儲存在服務帳號家目錄下的 `Videos/autocar`；既有 `AUTOCAR_RECORDINGS` 設定優先。服務狀態：
 
 ```bash
 systemctl status autocar

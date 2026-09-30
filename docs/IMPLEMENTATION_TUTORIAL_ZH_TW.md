@@ -1,5 +1,7 @@
 # Raspberry Pi 5 AutoCAR + YOLO26 從零實作教學手冊
 
+> 2026-09-29：安裝器已支援任意既有非 root 帳號與 hostname。請先閱讀[通用安裝說明](PORTABLE_INSTALL_ZH_TW.md)；本文的 rpi5 帳號、家目錄及 IP 為原測試機範例，服務模板請由安裝器產生。
+
 版本：2026-09-16  
 本次板端正常操作與檔案驗證紀錄見 [部署備忘錄第 26 節](DEPLOYMENT_MEMO_ZH_TW.md#26-2026-09-16-板端更新與驗證紀錄)。  
 適用平台：Raspberry Pi 5、64-bit Raspberry Pi OS、Python 3.13、Pi Camera／USB Webcam  

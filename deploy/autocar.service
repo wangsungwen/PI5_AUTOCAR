@@ -5,8 +5,9 @@ Wants=network-online.target
 
 [Service]
 Type=simple
-User=rpi5
-Group=rpi5
+User=@AUTOCAR_USER@
+Group=@AUTOCAR_GROUP@
+SupplementaryGroups=@AUTOCAR_DEVICE_GROUPS@
 WorkingDirectory=/opt/autocar
 EnvironmentFile=-/etc/autocar.env
 ExecStart=/opt/autocar-venv/bin/python -m autocar.server
