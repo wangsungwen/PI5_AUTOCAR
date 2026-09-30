@@ -29,17 +29,96 @@ Raspberry Pi 5 電腦視覺自走車的基礎架構，包含：
 - YOLO26／NCNN 紅黃綠燈及停止標誌異步推論與 3/5 幀穩定判定
 - Web UI 自動駕駛開關與即時遙測（原有手動功能完整保留）
 
-## 快速部署
+## 快速部署：Windows PowerShell → Raspberry Pi
 
-把此資料夾複製到 Pi 後，在 Pi 上執行：
+以下將 `alice` 換成你的 **Pi 登入帳號**，`192.168.1.50` 換成 **Pi 的 IP**。
+不需要修改 hostname。Pi 須已啟用 SSH，並可從 Windows 連線；Windows 須可使用 `scp`、`ssh` 指令。
+
+### 1. 在 Windows PowerShell 下載並上傳壓縮包
+
+在你要存放壓縮包的資料夾開啟 PowerShell，執行：
+
+```powershell
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/wangsungwen/PI5_AUTOCAR/main/RPI5_AutoCAR-YOLO-integrated.zip" -OutFile ".\RPI5_AutoCAR-YOLO-integrated.zip"
+
+scp .\RPI5_AutoCAR-YOLO-integrated.zip alice@192.168.1.50:~/
+```
+
+`git clone` 用來複製 Git 倉庫，不能下載 `/blob/main/...zip` 的單一檔案；
+這裡使用原始檔案網址直接下載 ZIP。若目前資料夾已經有最新版壓縮包，可直接執行 `scp`。
+
+輸入 Pi 帳號密碼。首次連線確認主機指紋無誤後，輸入 `yes`。
+
+### 2. 從 PowerShell 登入 Pi
+
+```powershell
+ssh alice@192.168.1.50
+```
+
+以下第 3～5 步的指令都在 **登入後的 Pi 終端機**執行。
+
+### 3. 解壓縮
 
 ```bash
+sudo apt-get update
+sudo apt-get install -y unzip
+
+mkdir -p ~/RPI5_AutoCAR
+unzip -o ~/RPI5_AutoCAR-YOLO-integrated.zip -d ~/RPI5_AutoCAR
+
 cd ~/RPI5_AutoCAR
+```
+
+`-o` 會覆蓋解壓目錄內的同名檔案。
+
+### 4. 執行一鍵安裝
+
+```bash
 sudo bash scripts/install.sh
 ```
 
-完成後開啟 `http://<Pi-IP>:8000`。安裝器自動使用 sudo 發起帳號，不限制 hostname 或帳號名稱。
-完整解壓縮步驟、指定帳號及舊版升級請見[通用安裝說明](docs/PORTABLE_INSTALL_ZH_TW.md)。
+安裝器會自動使用目前登入帳號，安裝相依套件、建立服務、設定開機啟動並啟動 AutoCAR。
+首次安裝需要下載 AI 套件，請等到完成。
+
+### 5. 確認 systemd 服務
+
+```bash
+sudo systemctl status autocar --no-pager
+```
+
+正常應顯示 `active (running)`。若要手動重新載入並確保開機啟動：
+
+```bash
+sudo systemctl daemon-reload
+sudo systemctl enable --now autocar
+```
+
+修改 `/etc/autocar.env` 後，執行：
+
+```bash
+sudo systemctl restart autocar
+```
+
+查看錯誤紀錄：
+
+```bash
+sudo journalctl -u autocar -n 100 --no-pager
+```
+
+### 6. 在 Windows 瀏覽器開啟
+
+```text
+http://192.168.1.50:8000
+```
+
+請使用自己的 Pi IP；若已修改 `AUTOCAR_PORT`，請使用設定的連接埠。
+
+壓縮包不含模型，視覺辨識與自動駕駛所需模型須另外部署。
+舊版升級若換了帳號，請檢查 `/etc/autocar.env` 的 `AUTOCAR_RECORDINGS`，
+避免仍指向 `/home/rpi5`。移除或註解該設定，可使用新服務帳號家目錄下的 `Videos/autocar`；
+修改後須重新啟動服務。
+
+指定服務帳號與其他升級細節請見[通用安裝說明](docs/PORTABLE_INSTALL_ZH_TW.md)。
 
 ### YOLO26 畫框預覽模型
 
