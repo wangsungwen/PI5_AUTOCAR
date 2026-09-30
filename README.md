@@ -1,18 +1,40 @@
 # Raspberry Pi 5 AutoCAR
 
-最新整理：**2026-09-16**。RPi5：`rpi5@192.168.0.160`，控制頁面：
+Raspberry Pi 5 電腦視覺自走車專案，整合網頁車控、相機錄影、YOLO26 視覺推論與自動駕駛。
+
+## 目錄
+
+- [專案文件與部署紀錄](#專案文件與部署紀錄)
+- [專案功能](#專案功能)
+- [快速部署](#快速部署)
+- [YOLO26 畫框預覽模型](#yolo26-畫框預覽模型)
+- [硬體控制設定](#硬體控制設定)
+- [手動車控](#手動車控)
+- [開發驗證](#開發驗證)
+
+## 專案文件與部署紀錄
+
+板端驗證紀錄：**2026-09-16**。原測試機：`rpi5@192.168.0.160`，控制頁面：
 [http://192.168.0.160:8000](http://192.168.0.160:8000)。使用者已確認新版可正常操作。
 本機程式與此次部署包一致，板端前端檔案已比對雜湊；詳見
 [部署備忘錄第 26 節](docs/DEPLOYMENT_MEMO_ZH_TW.md#26-2026-09-16-板端更新與驗證紀錄)。
 
 `RPI5_AutoCAR-YOLO-integrated.zip` 已更新為本次程式、測試、設定範例與文件；
-不含模型、虛擬環境與錄影。重新打包：`python scripts/package_release.py`。
+不含模型、虛擬環境與錄影。
+
+重新打包：
+
+```bash
+python scripts/package_release.py
+```
 
 完整的從零開始安裝、模型匯出、硬體設定、服務管理與故障排除，請參閱
 [Raspberry Pi 5 AutoCAR + YOLO26 完整開發與部署備忘錄](docs/DEPLOYMENT_MEMO_ZH_TW.md)。
 
 若要依照實際製作順序逐章操作，請使用
 [Raspberry Pi 5 AutoCAR + YOLO26 從零實作教學手冊](docs/IMPLEMENTATION_TUTORIAL_ZH_TW.md)。
+
+## 專案功能
 
 Raspberry Pi 5 電腦視覺自走車的基礎架構，包含：
 
@@ -29,10 +51,17 @@ Raspberry Pi 5 電腦視覺自走車的基礎架構，包含：
 - YOLO26／NCNN 紅黃綠燈及停止標誌異步推論與 3/5 幀穩定判定
 - Web UI 自動駕駛開關與即時遙測（原有手動功能完整保留）
 
-## 快速部署：Windows PowerShell → Raspberry Pi
+## 快速部署
+
+**操作流程：Windows PowerShell → Raspberry Pi → Windows 瀏覽器。**
 
 以下將 `alice` 換成你的 **Pi 登入帳號**，`192.168.1.50` 換成 **Pi 的 IP**。
-不需要修改 hostname。Pi 須已啟用 SSH，並可從 Windows 連線；Windows 須可使用 `scp`、`ssh` 指令。
+不需要修改 hostname。
+
+**開始前請確認：**
+
+- Pi 已啟用 SSH，並可從 Windows 連線。
+- Windows PowerShell 可使用 `scp`、`ssh` 指令。
 
 ### 1. 在 Windows PowerShell 下載並上傳壓縮包
 
@@ -55,7 +84,7 @@ scp .\RPI5_AutoCAR-YOLO-integrated.zip alice@192.168.1.50:~/
 ssh alice@192.168.1.50
 ```
 
-以下第 3～5 步的指令都在 **登入後的 Pi 終端機**執行。
+> 以下第 3～5 步的指令都在 **登入後的 Pi 終端機**執行。
 
 ### 3. 解壓縮
 
@@ -120,7 +149,9 @@ http://192.168.1.50:8000
 
 指定服務帳號與其他升級細節請見[通用安裝說明](docs/PORTABLE_INSTALL_ZH_TW.md)。
 
-### YOLO26 畫框預覽模型
+## YOLO26 畫框預覽模型
+
+### 模型目錄與基本設定
 
 將完整 NCNN 模型目錄放在 `/opt/autocar/models/yolo26n_ncnn_model/`，其中應包含
 `metadata.yaml`、`.param` 與 `.bin`。預覽模型、固定輸入尺寸、信心門檻及相機編號由
@@ -138,6 +169,8 @@ AUTOCAR_PREVIEW_JPEG_QUALITY=65
 
 外接 Webcam 可將 `AUTOCAR_CAMERA_INDEX` 改為實際編號，通常是 `1`，並將
 `AUTOCAR_CAMERA_ROTATE_180=0`。NCNN 的 `AUTOCAR_PREVIEW_IMGSZ` 必須與匯出尺寸相同。
+
+### 模型尺寸與執行期切換
 
 2026-09-10 板端最終驗證成功的預覽組合為：
 
@@ -159,6 +192,8 @@ AUTOCAR_PREVIEW_IMGSZ=640
 Pi 5 服務會在接受第一個相機串流請求前先載入 PyTorch／NCNN。這個順序可避免 Picamera2
 先載入另一組原生 BLAS 函式庫後，造成 `libtorch_cpu.so: undefined symbol: sbgemm_`。
 
+### 匯出較小的模型
+
 專案設定範例預設 NCNN 為 **640 × 640**。2026-09-16 板端執行中為
 `models/yolo26n_320_ncnn_model`／**320 × 320**；這是狀態 API 的執行期觀察，
 未讀取板端 `/etc/autocar.env`，不推定重啟後仍為同一組。若要提高 Pi 5 的 FPS，建議先從原始 `.pt` 重新匯出
@@ -179,6 +214,8 @@ AUTOCAR_PREVIEW_IMGSZ=320
 NumPy／PyTorch 衝突或 NCNN 模型尺寸不匹配。完整匯出、部署、FPS 測試與當機判斷流程
 請見部署備忘錄第 10、19、21 節。
 
+### 視覺推論開關與錯誤處理
+
 網頁的「視覺推論」開關預設為關閉：此時 `/api/camera/stream` 提供不含偵測框的原始
 MJPEG，手動車控及 H.264 錄影都可正常使用。開啟後才會載入 YOLO26 NCNN 並輸出畫框
 串流。啟動自動駕駛時系統會自動開啟視覺推論；自動駕駛運行中不可單獨關閉推論。
@@ -194,6 +231,8 @@ MJPEG，手動車控及 H.264 錄影都可正常使用。開啟後才會載入 Y
 單獨 PyTorch、完整 AI runtime、Picamera2 加完整 runtime，以及 640 NCNN 單張推論均
 成功。專案因此固定使用已驗證的 `torch → ultralytics → ncnn` 順序，並另外在進入
 推論前檢查模型固定尺寸，避免把尺寸問題誤判為套件問題。
+
+### AI runtime 修復
 
 遇到 `sbgemm_` 時，先停止服務並重裝正式環境中的 NumPy／SciPy 與 CPU PyTorch：
 
@@ -253,14 +292,16 @@ systemctl status autocar
 
 自動駕駛的模型訓練、部署、參數與安全調校請見 [開發手冊](docs/DEVELOPER_GUIDE.md)。手動模式在沒有模型時仍可使用；預設安全設定會阻止缺少交通或車道模型時啟動自動駕駛。
 
-## 手動車控（2026-09-16 更新）
+## 手動車控
+
+更新日期：**2026-09-16**。
 
 服務啟動時車體仍為停用；在 UI 開啟「車體控制」後，四輪以
 `AUTOCAR_MANUAL_SPEED`（預設 50% PWM）同速前進。四輪在同一控制週期更新，
 取消舊版左右兩側之間的 10 ms 延遲；I2C 寫入仍依序執行。
 
 | 操作 | 行為 |
-|---|---|
+| --- | --- |
 | F／↑／W | 每次提高轉速設定 5%，最高 100% |
 | B／↓／S | 每次降低轉速設定 5%，最低 0%，不倒車 |
 | L／←／A | 每次左調 5°，最低 −45° |
@@ -283,6 +324,11 @@ systemctl status autocar
 切換視窗或隱藏頁面會送 STOP。自動駕駛保留獨立連續左右輪控制，啟用時不觸發
 手動定速前進，手動心跳不延長自駕 watchdog。
 
-驗證：`python -m unittest discover -s tests -v`；`node tests/test_manual_ui.js`。
-#   r p i 5 _ a u t o c a r  
- 
+## 開發驗證
+
+在專案根目錄執行：
+
+```bash
+python -m unittest discover -s tests -v
+node tests/test_manual_ui.js
+```
