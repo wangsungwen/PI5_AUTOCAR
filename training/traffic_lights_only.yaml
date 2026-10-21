@@ -1,0 +1,10 @@
+# Paths are relative to this YAML when using train_traffic.py.
+path: ../datasets/traffic
+train: images/train
+val: images/val
+# Uncomment after preparing a separate test set containing all three classes.
+# test: images/test
+names:
+  0: red_light
+  1: yellow_light
+  2: green_light

@@ -22,6 +22,7 @@ class MotorController:
             raise ValueError("invalid manual speed or steering configuration")
         self._closed = threading.Event()
         self._speed = 0
+        self._gear = "forward"
         self._steering = 0
         self._left_command = self._right_command = 0.0
         self._enabled = False
@@ -55,6 +56,7 @@ class MotorController:
             if not enabled:
                 self._apply("stop")
             elif start_manual and not was_enabled:
+                self._gear = "forward"
                 self._speed = self._config.manual_speed
                 self._steering = 0
                 self._last_command = time.monotonic()
@@ -71,7 +73,7 @@ class MotorController:
             return self.status()
 
     def drive(self, direction: str) -> dict:
-        if direction not in VALID_DIRECTIONS | {"center"}:
+        if direction not in VALID_DIRECTIONS | {"center", "gear_forward", "gear_reverse"}:
             raise ValueError("unsupported direction")
         with self._lock:
             if direction != "stop" and not self._enabled:
@@ -79,6 +81,12 @@ class MotorController:
             self._last_command = time.monotonic()
             if direction == "stop":
                 self._apply("stop")
+            elif direction.startswith("gear_"):
+                # Always remove PWM before selecting polarity. A separate F+
+                # command is required to move after any direction selection.
+                self._apply("stop")
+                time.sleep(max(0.2, self._config.direction_change_delay))
+                self._gear = direction.removeprefix("gear_")
             else:
                 if direction == "forward":
                     self._speed = min(100, self._speed + self._config.manual_speed_step)
@@ -96,14 +104,16 @@ class MotorController:
             return self.status()
 
     def _apply_manual(self) -> None:
-        # Differential steering: inner wheels slow down, all wheels stay forward.
+        # Inner wheels slow down in either gear (steering-wheel convention).
         # This angle is a command scale, not a measured heading or servo angle.
         turn = self._steering / self._config.manual_steering_max
         left = self._speed / 100 * (1 + min(0, turn) * 0.8)
         right = self._speed / 100 * (1 - max(0, turn) * 0.8)
         self._direction = ("stop" if not self._speed else
-                           "left" if turn < 0 else "right" if turn > 0 else "forward")
-        self._write_tank(left, right)
+                           "left" if turn < 0 else "right" if turn > 0 else
+                           "reverse" if self._gear == "reverse" else "forward")
+        sign = -1 if self._gear == "reverse" else 1
+        self._write_tank(sign * left, sign * right)
 
     def drive_tank(self, left: float, right: float) -> dict:
         """Drive each side independently with normalized commands (-1.0..1.0).
@@ -203,6 +213,7 @@ class MotorController:
             return {"enabled": self._enabled, "direction": self._direction,
                     "backend": self._config.gpio_backend,
                     "speed_percent": self._speed,
+                    "gear": self._gear,
                     "steering_degrees": self._steering,
                     "speed_step": self._config.manual_speed_step,
                     "steering_step": self._config.manual_steering_step,

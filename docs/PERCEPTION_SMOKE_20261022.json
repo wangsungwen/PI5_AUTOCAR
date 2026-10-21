@@ -1,0 +1,26 @@
+{
+  "mode": "offline; no motor commands",
+  "image": "D:\\ResearchCodes\\RPI5_AutoCAR\\datasets\\road_base\\test\\images\\day01_000020_jpg.rf.e6541590bb124c0d6675750a866184ed.jpg",
+  "lane_model": "D:\\ResearchCodes\\RPI5_AutoCAR\\runs\\segment\\runs\\road\\baseline_v1-2\\weights\\best.pt",
+  "traffic_model": "D:\\ResearchCodes\\RPI5_AutoCAR\\runs\\detect\\kingfisher-raccoon-2\\traffic-light\\train\\weights\\best.pt",
+  "imgsz": 416,
+  "lane": {
+    "error": 0.0,
+    "confidence": 0.0,
+    "lane_center": 320,
+    "frame_center": 320
+  },
+  "traffic": "NONE",
+  "traffic_confidence": 0.0,
+  "lane_classes": {
+    "0": "road"
+  },
+  "traffic_classes": {
+    "0": "red_light",
+    "1": "yellow_light",
+    "2": "green_light",
+    "3": "stop_sign"
+  },
+  "cold_inference_seconds": 1.8665047999966191,
+  "limitation": "One-image smoke test; not accuracy or Pi latency validation."
+}

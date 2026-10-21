@@ -29,6 +29,37 @@ class MotorTests(unittest.TestCase):
         self.assertEqual(set(self.car.status()["wheel_pwm"].values()), {0})
         self.assertEqual(self.car.status()["direction"], "stop")
 
+    def test_reverse_selection_stops_then_negative_pwm_and_disable_resets(self):
+        self.car.set_enabled(True)
+        selected = self.car.drive("gear_reverse")
+        self.assertEqual(selected["gear"], "reverse")
+        self.assertEqual(set(selected["wheel_pwm"].values()), {0})
+        self.assertEqual(set(self.car.heartbeat()["wheel_pwm"].values()), {0})
+        self.assertEqual(set(self.car.drive("forward")["wheel_pwm"].values()), {-5})
+        turning = self.car.drive("left")["wheel_pwm"]
+        self.assertLess(abs(turning["A"]), abs(turning["B"]))
+        self.assertEqual(set(self.car.drive("gear_forward")["wheel_pwm"].values()), {0})
+        self.assertEqual(set(self.car.drive("forward")["wheel_pwm"].values()), {5})
+        self.car.drive("gear_reverse")
+        self.car.set_enabled(False)
+        with self.assertRaises(RuntimeError):
+            self.car.drive("gear_reverse")
+        self.assertEqual(self.car.set_enabled(True)["gear"], "forward")
+
+    def test_reverse_pca_polarities(self):
+        self.car._pca = Mock()
+        self.car._motor_d1, self.car._motor_d2 = Mock(), Mock()
+        self.car.set_enabled(True)
+        self.car.drive("gear_reverse")
+        self.car._pca.reset_mock()
+        self.car.drive("forward")
+        self.assertEqual({c.args for c in self.car._pca.set_level.call_args_list},
+                         {(2,True),(1,False),(3,False),(4,True),(8,False),(7,True)})
+        self.assertEqual({c.args for c in self.car._pca.set_duty_cycle.call_args_list},
+                         {(0,5),(5,5),(6,5),(11,5)})
+        self.car._motor_d1.on.assert_called()
+        self.car._motor_d2.off.assert_called()
+
     def test_steering_accumulates_and_speed_changes_all_wheels(self):
         self.car.set_enabled(True)
         self.car.drive("left")

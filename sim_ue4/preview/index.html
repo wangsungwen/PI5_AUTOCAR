@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="zh-Hant">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AutoCAR 場景原型預覽</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#0c171d;color:#edf4ef;font:16px system-ui,sans-serif}
+main{max-width:1100px;margin:auto;padding:40px 28px}small{color:#83cbb7;letter-spacing:.12em}
+h1{font-size:34px;margin:12px 0}p{color:#b4c5c9;line-height:1.7}
+nav{display:flex;gap:12px;flex-wrap:wrap;margin:24px 0}
+button{font:inherit;padding:14px 22px;border:1px solid #38515c;border-radius:8px;background:#182b33;color:white;cursor:pointer}
+button[aria-pressed=true]{background:#176c58;border-color:#71d6b4}button:focus-visible{outline:3px solid #f4cf89}
+img{display:block;width:100%;border-radius:10px;border:1px solid #38515c}
+.notice{padding:16px 20px;border-left:3px solid #e6c888;background:#202d30;color:#e6d6ad}
+.row{display:flex;align-items:center;gap:20px;margin:20px 0}a{color:#83cbb7}
+</style>
+<main>
+<small>RPI5 AUTOCAR · INDOOR SCENE PROTOTYPE</small>
+<h1>室內道路 · 可切換場景</h1>
+<p>依實拍場景特徵製作的三組幾何原型。UE4 原始專案提供相同場景的執行時切換。</p>
+<div class="notice">這是離線幾何預覽，不是 UE4 實機渲染。尺寸尚未量測校準；預覽未模擬反光材質。UE4 編譯與執行仍待安裝編輯器後驗證。</div>
+<nav aria-label="場景">
+<button data-scene="1" aria-pressed="true">1　木紋地板彎道</button>
+<button data-scene="2" aria-pressed="false">2　亮面地板路段</button>
+<button data-scene="3" aria-pressed="false">3　紅綠燈測試區</button>
+</nav>
+<div class="row"><button id="view" aria-pressed="false">切換俯視配置圖</button><span id="info">相機高 15 cm · 俯角 8° · FOV 66°（暫定）</span></div>
+<img id="scene" src="scene_1.png" alt="木紋地板彎道的幾何預覽">
+<p>UE4 操作：1／2／3 切換場景；W／S 移動；A／D 轉向；Space 暫停移動；R 重設；C 俯視；T 切換燈號。此版為相機巡覽，不含車輛碰撞或 AirSim 控制。</p>
+</main>
+<script>
+let selected=1, overhead=false;
+const labels=['木紋地板彎道','亮面地板路段','紅綠燈測試區'];
+function update(){
+ document.querySelectorAll('[data-scene]').forEach(b=>b.setAttribute('aria-pressed',Number(b.dataset.scene)===selected));
+ document.getElementById('scene').src=(overhead?'layout_':'scene_')+selected+'.png';
+ document.getElementById('scene').alt=labels[selected-1]+(overhead?'的俯視配置圖':'的幾何預覽');
+ document.getElementById('view').setAttribute('aria-pressed',overhead);
+ document.getElementById('view').textContent=overhead?'切換車載視角':'切換俯視配置圖';
+}
+document.querySelectorAll('[data-scene]').forEach(b=>b.onclick=()=>{selected=Number(b.dataset.scene);update()});
+document.getElementById('view').onclick=()=>{overhead=!overhead;update()};
+document.addEventListener('keydown',e=>{if(['1','2','3'].includes(e.key)){selected=Number(e.key);update()}if(e.key.toLowerCase()==='c'){overhead=!overhead;update()}});
+</script>
+</html>

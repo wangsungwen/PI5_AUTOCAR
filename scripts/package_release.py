@@ -30,19 +30,20 @@ def main() -> None:
     UPDATE.mkdir(parents=True, exist_ok=True)
     bundle = UPDATE / "update.tar.gz"
     with tarfile.open(bundle, "w:gz") as archive:
-        for folder in ("autocar", "web", "tests"):
+        for folder in ("autocar", "web", "tests", "sim_airsim"):
             for path in source_files(folder):
                 archive.add(path, arcname=path.relative_to(ROOT).as_posix())
     (UPDATE / "update.sha256").write_text(
         f"{sha256(bundle)}  {bundle.name}\n", encoding="ascii")
     (UPDATE / "manifest.json").write_text(
-        json.dumps({name: sha256(ROOT / name) for name in CHANGED}, indent=2) + "\n",
+        json.dumps({path.relative_to(ROOT).as_posix(): sha256(path)
+                    for folder in ("autocar", "web", "tests", "sim_airsim") for path in source_files(folder)}, indent=2) + "\n",
         encoding="utf-8")
 
     release = ROOT / "RPI5_AutoCAR-YOLO-integrated.zip"
     included = [ROOT / name for name in (
         "README.md", "requirements.txt", "requirements-autonomy.txt")]
-    for folder in ("autocar", "web", "tests", "scripts", "deploy", "docs", "training"):
+    for folder in ("autocar", "web", "tests", "scripts", "deploy", "docs", "training", "sim_airsim", "sim_ue4"):
         included.extend(path for path in source_files(folder)
                         if not (path.parent == UPDATE and path.name in GENERATED))
     with zipfile.ZipFile(release, "w", compression=zipfile.ZIP_DEFLATED) as archive:

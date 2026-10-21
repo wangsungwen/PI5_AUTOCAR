@@ -1,0 +1,12 @@
+{
+  "screenshot": "preview/browser_verified.png",
+  "browser_preview": "passed",
+  "ue4_runtime": "not tested",
+  "checks": [
+    "scene 1 initial image",
+    "scene 2 button and image",
+    "scene 3 button and image",
+    "overhead toggle",
+    "keyboard 1 and C"
+  ]
+}

@@ -1,0 +1,1647 @@
+{
+  "source": "D:\\ResearchCodes\\RPI5_AutoCAR_RoadTrain",
+  "target": "D:\\ResearchCodes\\RPI5_AutoCAR",
+  "backup": "D:\\ResearchCodes\\RPI5_AutoCAR\\.build_artifacts\\pre-roadtrain-20261022-061800",
+  "files": [
+    {
+      "path": "autocar/autopilot.py",
+      "action": "identical",
+      "source_sha256": "727c2d742a2486f1bfa36a65dbc7b0510fb8cd4bcfe07fa12b455b0e608377e3",
+      "integrated_sha256": "cc1ff2ddedb4d5b3b92f129c7ed8cf4415e5f42a10e02d07056e352747b19220"
+    },
+    {
+      "path": "autocar/camera.py",
+      "action": "copy",
+      "source_sha256": "1cecf851547b7c6fd4bb1b21e1cfdd1295fcf3da1a8fbb7e1790bdfe89dd983c",
+      "integrated_sha256": "1cecf851547b7c6fd4bb1b21e1cfdd1295fcf3da1a8fbb7e1790bdfe89dd983c"
+    },
+    {
+      "path": "autocar/config.py",
+      "action": "identical",
+      "source_sha256": "63a00eeb6178c80f4375ff57ea4964602339af35df3af68c3215227ba745b900",
+      "integrated_sha256": "63a00eeb6178c80f4375ff57ea4964602339af35df3af68c3215227ba745b900"
+    },
+    {
+      "path": "autocar/detection_stream.py",
+      "action": "identical",
+      "source_sha256": "7e5cf50b4506e54a6baa448aa06a66d843617134040e17aa53c06c44b3b931a0",
+      "integrated_sha256": "7e5cf50b4506e54a6baa448aa06a66d843617134040e17aa53c06c44b3b931a0"
+    },
+    {
+      "path": "autocar/gimbal.py",
+      "action": "identical",
+      "source_sha256": "c061276d88a9bb903518f9bea1682cbd15878da33f283cd9e17159723253d1c5",
+      "integrated_sha256": "c061276d88a9bb903518f9bea1682cbd15878da33f283cd9e17159723253d1c5"
+    },
+    {
+      "path": "autocar/motor.py",
+      "action": "copy",
+      "source_sha256": "42dd169cc8da129c30a926585651d71f353b0d0694498442a215bd1d8561764f",
+      "integrated_sha256": "42dd169cc8da129c30a926585651d71f353b0d0694498442a215bd1d8561764f"
+    },
+    {
+      "path": "autocar/pca9685.py",
+      "action": "identical",
+      "source_sha256": "b7016a314e4736e5124d9bcf5c2da89f8bfcc455d77b54770f1c0ee08eca0594",
+      "integrated_sha256": "b7016a314e4736e5124d9bcf5c2da89f8bfcc455d77b54770f1c0ee08eca0594"
+    },
+    {
+      "path": "autocar/perception.py",
+      "action": "identical",
+      "source_sha256": "0caa0b7bf186e69edfa78aff90628be8140400ff16877edea1ef7f18a2a4fb53",
+      "integrated_sha256": "413a00a8ca468cf65c109db4b196355354a032308e8e94281225acdb726600cf"
+    },
+    {
+      "path": "autocar/server.py",
+      "action": "copy",
+      "source_sha256": "85c6f0f2178407c072b5647660eb88d3aa70bd483c00c1baafb4813968ec9d81",
+      "integrated_sha256": "85c6f0f2178407c072b5647660eb88d3aa70bd483c00c1baafb4813968ec9d81"
+    },
+    {
+      "path": "autocar/sim_camera.py",
+      "action": "copy",
+      "source_sha256": "c80046f8adeb6f51dafdf989311c6002f3f8883272ef3c737fc3e53c63796e95",
+      "integrated_sha256": "c80046f8adeb6f51dafdf989311c6002f3f8883272ef3c737fc3e53c63796e95"
+    },
+    {
+      "path": "autocar/__init__.py",
+      "action": "identical",
+      "source_sha256": "9335ac5f7e94811e2209ef644a85e24b97ac119c11d50a70a03dcc2a1860a979",
+      "integrated_sha256": "9335ac5f7e94811e2209ef644a85e24b97ac119c11d50a70a03dcc2a1860a979"
+    },
+    {
+      "path": "training/lane_seg.yaml",
+      "action": "identical",
+      "source_sha256": "de33fd736ea6d722a80515474f68ae7ae28b436dd992d53074e4e514c15b6193",
+      "integrated_sha256": "de33fd736ea6d722a80515474f68ae7ae28b436dd992d53074e4e514c15b6193"
+    },
+    {
+      "path": "training/traffic_light.yaml",
+      "action": "identical",
+      "source_sha256": "6e7c6628f95b10cb699fcb1751bdc30ca02f2a31b47202f34dd6f31f4f4c24fd",
+      "integrated_sha256": "6e7c6628f95b10cb699fcb1751bdc30ca02f2a31b47202f34dd6f31f4f4c24fd"
+    },
+    {
+      "path": "training/train_lane.py",
+      "action": "identical",
+      "source_sha256": "d53664ba9e804979311cf30bc985b817e1dd75af0fe6498d96f914fd460073a8",
+      "integrated_sha256": "d53664ba9e804979311cf30bc985b817e1dd75af0fe6498d96f914fd460073a8"
+    },
+    {
+      "path": "training/train_traffic.py",
+      "action": "keep-target",
+      "source_sha256": "e0aa6f910262c6e93b048945747bd85642fcc4475773dcd881fd033fdc62ec9a",
+      "integrated_sha256": "9fd91771589f4aa79a326d0fa574b9ce15378a033e67cbe28572080d80b892a1"
+    },
+    {
+      "path": "training/road_reflection/augment.py",
+      "action": "identical",
+      "source_sha256": "78487a7503ffe22da395db46b2b9f255b0997e3dfc0662e16695097147d82f52",
+      "integrated_sha256": "78487a7503ffe22da395db46b2b9f255b0997e3dfc0662e16695097147d82f52"
+    },
+    {
+      "path": "training/road_reflection/environment-lock.txt",
+      "action": "copy",
+      "source_sha256": "36ad87d833ac3bb8a367608b131fb4b82ebe8ae6e4cc897c7df5ae3e70a91f03",
+      "integrated_sha256": "36ad87d833ac3bb8a367608b131fb4b82ebe8ae6e4cc897c7df5ae3e70a91f03"
+    },
+    {
+      "path": "training/road_reflection/evaluate.py",
+      "action": "identical",
+      "source_sha256": "59f4eecf24b7fcc39b50723bb3c2a96c6058e7b930dc46fb52c68ffff9c30b46",
+      "integrated_sha256": "59f4eecf24b7fcc39b50723bb3c2a96c6058e7b930dc46fb52c68ffff9c30b46"
+    },
+    {
+      "path": "training/road_reflection/extract_frames.py",
+      "action": "identical",
+      "source_sha256": "22f323c5e1d45169f97876c0a80eed28ed9e7898ca948b6b7e6235dbcb0c613d",
+      "integrated_sha256": "22f323c5e1d45169f97876c0a80eed28ed9e7898ca948b6b7e6235dbcb0c613d"
+    },
+    {
+      "path": "training/road_reflection/prepare.py",
+      "action": "keep-target",
+      "source_sha256": "0fb84aed38d683e9a96798db31da879f05c7c98bea985b5ce31cf5fe82323d89",
+      "integrated_sha256": "f485044dba3cf5835f9e7b95c0a5cc5baf6c5eb866fef653cc2d49e47f320210"
+    },
+    {
+      "path": "training/road_reflection/requirements.txt",
+      "action": "identical",
+      "source_sha256": "c397943dcde7ca1a9539e07e7bf7c7bc9d3d368cbbb0ed6516530bc798b2eb14",
+      "integrated_sha256": "c397943dcde7ca1a9539e07e7bf7c7bc9d3d368cbbb0ed6516530bc798b2eb14"
+    },
+    {
+      "path": "training/road_reflection/train.py",
+      "action": "identical",
+      "source_sha256": "eb0d27aff6fd26a18247616112ee3c19637309e52a117e119950b29249dae787",
+      "integrated_sha256": "eb0d27aff6fd26a18247616112ee3c19637309e52a117e119950b29249dae787"
+    },
+    {
+      "path": "tests/test_airsim_adapters.py",
+      "action": "copy",
+      "source_sha256": "a850ef5e78063aefbcf9e7bb531b5f22dce48057caa86e66ebe91ea2e4ca27af",
+      "integrated_sha256": "a850ef5e78063aefbcf9e7bb531b5f22dce48057caa86e66ebe91ea2e4ca27af"
+    },
+    {
+      "path": "tests/test_camera.py",
+      "action": "copy",
+      "source_sha256": "33fb257a61cd2860a32118be6eacd1c30d00f018729b4b31271da6f8cf4b6d58",
+      "integrated_sha256": "33fb257a61cd2860a32118be6eacd1c30d00f018729b4b31271da6f8cf4b6d58"
+    },
+    {
+      "path": "tests/test_detection_stream.py",
+      "action": "identical",
+      "source_sha256": "511578e97b78c728902341692fdfaef1a1b4f4cc0666e03d7198fd23aad25939",
+      "integrated_sha256": "511578e97b78c728902341692fdfaef1a1b4f4cc0666e03d7198fd23aad25939"
+    },
+    {
+      "path": "tests/test_install.py",
+      "action": "identical",
+      "source_sha256": "36c0495d55ab6c09deebba6e086f23d6108377a3769d2111010f344087795130",
+      "integrated_sha256": "36c0495d55ab6c09deebba6e086f23d6108377a3769d2111010f344087795130"
+    },
+    {
+      "path": "tests/test_manual_ui.js",
+      "action": "copy",
+      "source_sha256": "688c90f254eca658d7136a5c6865abe85b1b7d5a3bcb71ae6f6be1457fb20dd3",
+      "integrated_sha256": "688c90f254eca658d7136a5c6865abe85b1b7d5a3bcb71ae6f6be1457fb20dd3"
+    },
+    {
+      "path": "tests/test_motor.py",
+      "action": "copy",
+      "source_sha256": "6e72bcc6c158f5526df14a61e2a02891bd69188688400c9f3044928d151f50df",
+      "integrated_sha256": "6e72bcc6c158f5526df14a61e2a02891bd69188688400c9f3044928d151f50df"
+    },
+    {
+      "path": "tests/test_perception.py",
+      "action": "identical",
+      "source_sha256": "e2e194cc33a9e5de3127145532c24194be45319a213187f5dc62fb3e6a6fe4a0",
+      "integrated_sha256": "4ddd40e3c894e1f0c90bc996c4f09540bb79f39972292047ae7e4eb2a33607f5"
+    },
+    {
+      "path": "tests/test_sim_camera.py",
+      "action": "copy",
+      "source_sha256": "d6cf9885158cf01091dde819eb4a6627dd27ff5c2ba6c23414778c4ba3fd5bec",
+      "integrated_sha256": "d6cf9885158cf01091dde819eb4a6627dd27ff5c2ba6c23414778c4ba3fd5bec"
+    },
+    {
+      "path": "scripts/install.sh",
+      "action": "identical",
+      "source_sha256": "04788acc081ceb334f9b7658df90d6dac443d8b1fac8635a748c94d3f6002e67",
+      "integrated_sha256": "04788acc081ceb334f9b7658df90d6dac443d8b1fac8635a748c94d3f6002e67"
+    },
+    {
+      "path": "scripts/install_pi.sh",
+      "action": "identical",
+      "source_sha256": "16b27f6cf537a5d0d899c4dd6f4f1e9fd853c31449b5b9d9ad3830eb841f4a30",
+      "integrated_sha256": "16b27f6cf537a5d0d899c4dd6f4f1e9fd853c31449b5b9d9ad3830eb841f4a30"
+    },
+    {
+      "path": "scripts/package_release.py",
+      "action": "identical",
+      "source_sha256": "db78e75f3f0dcbf01919a34b84654396c8f6328716615219bc76180381882034",
+      "integrated_sha256": "f10dd53c30aec24ac71c542afc30585044a352d815cdacc1682336b957b60509"
+    },
+    {
+      "path": "scripts/yolo_web_stream.py",
+      "action": "identical",
+      "source_sha256": "b31cbe95bc5a65783379309d28d37aa704aced1a866c376ef4f9d64e01b11313",
+      "integrated_sha256": "b31cbe95bc5a65783379309d28d37aa704aced1a866c376ef4f9d64e01b11313"
+    },
+    {
+      "path": "docs/BOARD_VALIDATION_20260916.json",
+      "action": "identical",
+      "source_sha256": "fc17ddde2f6451680b97c031b47624b6927c75e82f3b96fa65aec1de6e3cb5c5",
+      "integrated_sha256": "fc17ddde2f6451680b97c031b47624b6927c75e82f3b96fa65aec1de6e3cb5c5"
+    },
+    {
+      "path": "docs/DEPLOYMENT_MEMO_ZH_TW.md",
+      "action": "identical",
+      "source_sha256": "07b68864648bc0550ef0cd4a6fb0258fc7db0538f55d6ecf15cf05cb7574cbf0",
+      "integrated_sha256": "07b68864648bc0550ef0cd4a6fb0258fc7db0538f55d6ecf15cf05cb7574cbf0"
+    },
+    {
+      "path": "docs/DEPLOYMENT_VALIDATION_20261019.md",
+      "action": "copy",
+      "source_sha256": "e56e9e59d2710e3a532bd85a5ce909ca850db94eed20c7c3fabd6fcb7bb076b2",
+      "integrated_sha256": "e56e9e59d2710e3a532bd85a5ce909ca850db94eed20c7c3fabd6fcb7bb076b2"
+    },
+    {
+      "path": "docs/DEVELOPER_GUIDE.md",
+      "action": "identical",
+      "source_sha256": "4ba394ce4cd825f04493603e7ed34e698e8d7e6a5f935b067a3b535dac01cb00",
+      "integrated_sha256": "4ba394ce4cd825f04493603e7ed34e698e8d7e6a5f935b067a3b535dac01cb00"
+    },
+    {
+      "path": "docs/IMPLEMENTATION_TUTORIAL_ZH_TW.md",
+      "action": "identical",
+      "source_sha256": "b574853a458fb1ca3f4b2e0f1da31f55e5952e25b914ed2edacab8a8cae4a012",
+      "integrated_sha256": "b574853a458fb1ca3f4b2e0f1da31f55e5952e25b914ed2edacab8a8cae4a012"
+    },
+    {
+      "path": "docs/PORTABLE_INSTALL_ZH_TW.md",
+      "action": "identical",
+      "source_sha256": "028bc731cf8e2362e19ca8e442d3d860c524c9483b20524faa13aed518752808",
+      "integrated_sha256": "028bc731cf8e2362e19ca8e442d3d860c524c9483b20524faa13aed518752808"
+    },
+    {
+      "path": "docs/ROAD_SEGMENTATION_REFLECTION_COURSE_ZH_TW.md",
+      "action": "identical",
+      "source_sha256": "f46fcb5144741d770f41afc3bac1f76de1396fc6cf8f890165892cfee702bec6",
+      "integrated_sha256": "f46fcb5144741d770f41afc3bac1f76de1396fc6cf8f890165892cfee702bec6"
+    },
+    {
+      "path": "docs/RPI5 AutoCAR × AirSim 仿真道路實測部署手冊.docx",
+      "action": "copy",
+      "source_sha256": "8b5a9161da9d9697d199557d53f841d6e4aefcf9a8072523a67ded51a1fe8b16",
+      "integrated_sha256": "8b5a9161da9d9697d199557d53f841d6e4aefcf9a8072523a67ded51a1fe8b16"
+    },
+    {
+      "path": "docs/道路分割與反光改善實作課程.docx",
+      "action": "copy",
+      "source_sha256": "d94887578ffd8e444f3eadc0e5dc9800329fd8a273c3c5e7fb2205334cc661da",
+      "integrated_sha256": "d94887578ffd8e444f3eadc0e5dc9800329fd8a273c3c5e7fb2205334cc661da"
+    },
+    {
+      "path": "web/app.js",
+      "action": "copy",
+      "source_sha256": "fdec382a9e6b27d595b6caaeb75d2cdb0ecaf66ea30c391ab3898485ff43a2a8",
+      "integrated_sha256": "fdec382a9e6b27d595b6caaeb75d2cdb0ecaf66ea30c391ab3898485ff43a2a8"
+    },
+    {
+      "path": "web/autopilot.css",
+      "action": "identical",
+      "source_sha256": "0f13d4c5f0dde34aa74e1faa8c472b25c7ff5dcf2d3e9d0abe626d7a0fb75fbb",
+      "integrated_sha256": "0f13d4c5f0dde34aa74e1faa8c472b25c7ff5dcf2d3e9d0abe626d7a0fb75fbb"
+    },
+    {
+      "path": "web/detection.css",
+      "action": "identical",
+      "source_sha256": "ab57098331d865dda9d74977dd74405b95d8caa08789e96309e5c4c4dfef817a",
+      "integrated_sha256": "ab57098331d865dda9d74977dd74405b95d8caa08789e96309e5c4c4dfef817a"
+    },
+    {
+      "path": "web/gimbal.css",
+      "action": "identical",
+      "source_sha256": "680a640e567b712f9ca70ef56311684250a3aa66ee2bac49a5d3013f6d109a70",
+      "integrated_sha256": "680a640e567b712f9ca70ef56311684250a3aa66ee2bac49a5d3013f6d109a70"
+    },
+    {
+      "path": "web/index.html",
+      "action": "copy",
+      "source_sha256": "79b6824c367b25c7850c742d2c8d5e1aaf8d234ea6be72ccb539b58541975f31",
+      "integrated_sha256": "79b6824c367b25c7850c742d2c8d5e1aaf8d234ea6be72ccb539b58541975f31"
+    },
+    {
+      "path": "web/layout.css",
+      "action": "copy",
+      "source_sha256": "e781884e690273aa663f04782478f46153c7acb63ebd27eebba1bcfcb94a055a",
+      "integrated_sha256": "e781884e690273aa663f04782478f46153c7acb63ebd27eebba1bcfcb94a055a"
+    },
+    {
+      "path": "web/sim-camera.js",
+      "action": "copy",
+      "source_sha256": "ac5e752ec44ddde3e7bfd69364693508f4d5dc7eb313c6b0693463edd8241f3e",
+      "integrated_sha256": "ac5e752ec44ddde3e7bfd69364693508f4d5dc7eb313c6b0693463edd8241f3e"
+    },
+    {
+      "path": "web/style.css",
+      "action": "identical",
+      "source_sha256": "3d8b3d7bd20b85781b919df77e1632425387b186e8b641ff547f7ef026e85217",
+      "integrated_sha256": "3d8b3d7bd20b85781b919df77e1632425387b186e8b641ff547f7ef026e85217"
+    },
+    {
+      "path": "sim_airsim/adapters.py",
+      "action": "copy",
+      "source_sha256": "51b649d12d48028cca7f8e7ae5528b9be5b7ba0e18763661fbc1da1acfc9abfc",
+      "integrated_sha256": "51b649d12d48028cca7f8e7ae5528b9be5b7ba0e18763661fbc1da1acfc9abfc"
+    },
+    {
+      "path": "sim_airsim/check_airsim.py",
+      "action": "copy",
+      "source_sha256": "232273ba5a1878f8b1e6333df44ae8b4d1ee3e44a3447f589b9cd2980f450690",
+      "integrated_sha256": "232273ba5a1878f8b1e6333df44ae8b4d1ee3e44a3447f589b9cd2980f450690"
+    },
+    {
+      "path": "sim_airsim/fake_airsim_server.py",
+      "action": "copy",
+      "source_sha256": "6afbab649606270e559ce6a0ec27528dec63036078f983608cfd4d566f67a5ad",
+      "integrated_sha256": "6afbab649606270e559ce6a0ec27528dec63036078f983608cfd4d566f67a5ad"
+    },
+    {
+      "path": "sim_airsim/manual_collect.py",
+      "action": "copy",
+      "source_sha256": "20cec11cad655f6e8defa9c1f6cf5ba7e9b00a7686a6d64fbb7a1ed0732516f1",
+      "integrated_sha256": "20cec11cad655f6e8defa9c1f6cf5ba7e9b00a7686a6d64fbb7a1ed0732516f1"
+    },
+    {
+      "path": "sim_airsim/requirements-airsim.txt",
+      "action": "copy",
+      "source_sha256": "d02dde40e6edcaa6be8f57f1088de45091ef3fcad8369fd15bee7076c83b17ef",
+      "integrated_sha256": "d02dde40e6edcaa6be8f57f1088de45091ef3fcad8369fd15bee7076c83b17ef"
+    },
+    {
+      "path": "sim_airsim/run_autopilot.py",
+      "action": "copy",
+      "source_sha256": "c58b02dd5503992ab719802c891eda90c97e4efcbdde9163234dc35bb5bc8ade",
+      "integrated_sha256": "c58b02dd5503992ab719802c891eda90c97e4efcbdde9163234dc35bb5bc8ade"
+    },
+    {
+      "path": "sim_airsim/settings.json",
+      "action": "copy",
+      "source_sha256": "66316ff7b68157ff3ad82c0d24b061b0357f8e3423ab5302fda164483dbe29a4",
+      "integrated_sha256": "66316ff7b68157ff3ad82c0d24b061b0357f8e3423ab5302fda164483dbe29a4"
+    },
+    {
+      "path": "sim_airsim/setup_airsim.ps1",
+      "action": "copy",
+      "source_sha256": "c5c63acaff16dd1e99ccbc607b5582417ed2c01d3d2a85c95425543107a6f377",
+      "integrated_sha256": "c5c63acaff16dd1e99ccbc607b5582417ed2c01d3d2a85c95425543107a6f377"
+    },
+    {
+      "path": "sim_airsim/__init__.py",
+      "action": "copy",
+      "source_sha256": "a59fdb60a02468ba9a8201edc2663ad367b4bad2cb8b3ad9ceff8e4391bfc9af",
+      "integrated_sha256": "a59fdb60a02468ba9a8201edc2663ad367b4bad2cb8b3ad9ceff8e4391bfc9af"
+    },
+    {
+      "path": "datasets/road_base/data.yaml",
+      "action": "copy",
+      "source_sha256": "26fb14b6ee7855fd6bc4d23b35eb9fa91ec0f8687996e056622c4763a708fed0",
+      "integrated_sha256": "db1fd7931ddb9f6c977b104b0ece301a6bca988d64abd40ca4c0f80f7d1d673d"
+    },
+    {
+      "path": "datasets/road_export/data.yaml",
+      "action": "copy",
+      "source_sha256": "3b06b6e1e80f1d427024ae9febd3456c247f2d3d20ebad209fed03158b8aa25b",
+      "integrated_sha256": "3b06b6e1e80f1d427024ae9febd3456c247f2d3d20ebad209fed03158b8aa25b"
+    },
+    {
+      "path": "datasets/road_export/README.roboflow.txt",
+      "action": "copy",
+      "source_sha256": "f0438b51024ff09d4e30cfc92d233d03cf9156637255d73e55b64c23fd6b4197",
+      "integrated_sha256": "f0438b51024ff09d4e30cfc92d233d03cf9156637255d73e55b64c23fd6b4197"
+    },
+    {
+      "path": "datasets/road_export/valid/images/day01_000001_jpg.rf.c35a72ed84a92da0704242ee6b9605da.jpg",
+      "action": "copy",
+      "source_sha256": "bf1f43597e644c04f6e24a79def8da0752b4158efeb9339a3a69e677c4f19539",
+      "integrated_sha256": "bf1f43597e644c04f6e24a79def8da0752b4158efeb9339a3a69e677c4f19539"
+    },
+    {
+      "path": "datasets/road_export/valid/images/day01_000003_jpg.rf.f65f6e27d42b23d546609beb4f6d4903.jpg",
+      "action": "copy",
+      "source_sha256": "8c8be8291e5707674cdfed5a8183ad31f4e82ce382fe7f8591bc26153b8c4a36",
+      "integrated_sha256": "8c8be8291e5707674cdfed5a8183ad31f4e82ce382fe7f8591bc26153b8c4a36"
+    },
+    {
+      "path": "datasets/road_export/valid/images/day01_000021_jpg.rf.1f0bac9ad59cb4783331560640897903.jpg",
+      "action": "copy",
+      "source_sha256": "950c34e9fe533ca651fa204bfd58a1b60f81eb6cd8d6675b4480c913b7c49159",
+      "integrated_sha256": "950c34e9fe533ca651fa204bfd58a1b60f81eb6cd8d6675b4480c913b7c49159"
+    },
+    {
+      "path": "datasets/road_export/valid/labels/day01_000001_jpg.rf.c35a72ed84a92da0704242ee6b9605da.txt",
+      "action": "copy",
+      "source_sha256": "12eea8fd5b9109a8aeaad54ae84f8c40c8c668476b974d00ad173fa612eab74c",
+      "integrated_sha256": "12eea8fd5b9109a8aeaad54ae84f8c40c8c668476b974d00ad173fa612eab74c"
+    },
+    {
+      "path": "datasets/road_export/valid/labels/day01_000003_jpg.rf.f65f6e27d42b23d546609beb4f6d4903.txt",
+      "action": "copy",
+      "source_sha256": "e27ef3a7c56691aafe171b0e9246e71555bd89a3aea9820b76a3c9b97f73ef43",
+      "integrated_sha256": "e27ef3a7c56691aafe171b0e9246e71555bd89a3aea9820b76a3c9b97f73ef43"
+    },
+    {
+      "path": "datasets/road_export/valid/labels/day01_000021_jpg.rf.1f0bac9ad59cb4783331560640897903.txt",
+      "action": "copy",
+      "source_sha256": "82236560336c5b539765fcb2dd91b6ce49f6a1204057a34fe9b59767b9af5ab4",
+      "integrated_sha256": "82236560336c5b539765fcb2dd91b6ce49f6a1204057a34fe9b59767b9af5ab4"
+    },
+    {
+      "path": "datasets/road_export/train/images/day01_000002_jpg.rf.29b31d2395bde0abe1ce5983fa59f36e.jpg",
+      "action": "copy",
+      "source_sha256": "e3191218015fae124f93c0885541e4b6fb3b9699235e91d4886975d30d03326e",
+      "integrated_sha256": "e3191218015fae124f93c0885541e4b6fb3b9699235e91d4886975d30d03326e"
+    },
+    {
+      "path": "datasets/road_export/train/images/day01_000004_jpg.rf.7498a51f453e954ec2c3a990e5c7fe29.jpg",
+      "action": "copy",
+      "source_sha256": "e2e97e360eb145482fa9bd5ae9d6a4ed4d7f5705c2c0aa85c08f23a15516a46b",
+      "integrated_sha256": "e2e97e360eb145482fa9bd5ae9d6a4ed4d7f5705c2c0aa85c08f23a15516a46b"
+    },
+    {
+      "path": "datasets/road_export/train/images/day01_000005_jpg.rf.844dc8031fa6258b5cfe14835ed55484.jpg",
+      "action": "copy",
+      "source_sha256": "e8ce24b423ab2f947d37fe69452c45543359648f918861e16cd9d7f25af18cbd",
+      "integrated_sha256": "e8ce24b423ab2f947d37fe69452c45543359648f918861e16cd9d7f25af18cbd"
+    },
+    {
+      "path": "datasets/road_export/train/images/day01_000006_jpg.rf.1ffeb8defe6124ccc322bb2a8e664263.jpg",
+      "action": "copy",
+      "source_sha256": "616130e0fffd1efc0b003d0bc2433deae0558ddc2889ab21f35b6b2b2c4cfd94",
+      "integrated_sha256": "616130e0fffd1efc0b003d0bc2433deae0558ddc2889ab21f35b6b2b2c4cfd94"
+    },
+    {
+      "path": "datasets/road_export/train/images/day01_000008_jpg.rf.bac9bb7859157dbef85eb927a826a5ba.jpg",
+      "action": "copy",
+      "source_sha256": "6bc213e1c3d7aed5021161cfca97b57fdaab1917c5951bc09723db102b02149f",
+      "integrated_sha256": "6bc213e1c3d7aed5021161cfca97b57fdaab1917c5951bc09723db102b02149f"
+    },
+    {
+      "path": "datasets/road_export/train/images/day01_000010_jpg.rf.f5bd0d250df8b0ea3524b29f82d3b704.jpg",
+      "action": "copy",
+      "source_sha256": "955e6ac3272c8dc29a13c72d598b16d37dd8a918bacc9bcc51b748de7b4c5e03",
+      "integrated_sha256": "955e6ac3272c8dc29a13c72d598b16d37dd8a918bacc9bcc51b748de7b4c5e03"
+    },
+    {
+      "path": "datasets/road_export/train/images/day01_000011_jpg.rf.c9d085c552101ed64af34395ff04c24a.jpg",
+      "action": "copy",
+      "source_sha256": "183b6874e0b98a392b97268f42d19986ce7210dd84458f9717fbae24fda96605",
+      "integrated_sha256": "183b6874e0b98a392b97268f42d19986ce7210dd84458f9717fbae24fda96605"
+    },
+    {
+      "path": "datasets/road_export/train/images/day01_000012_jpg.rf.3f9a2f7196da8bd534e7dbe2075589a2.jpg",
+      "action": "copy",
+      "source_sha256": "519b21c223a06dc09a0b32f22bbdf55849a04f11e06e12dd15e3214857256631",
+      "integrated_sha256": "519b21c223a06dc09a0b32f22bbdf55849a04f11e06e12dd15e3214857256631"
+    },
+    {
+      "path": "datasets/road_export/train/images/day01_000013_jpg.rf.723e6241c63794d9c9d346dd5393b5a6.jpg",
+      "action": "copy",
+      "source_sha256": "60b9cb2e16c163cb3a73ab45c0d38c845dc1bdb041912b5744422ce0d09a99d3",
+      "integrated_sha256": "60b9cb2e16c163cb3a73ab45c0d38c845dc1bdb041912b5744422ce0d09a99d3"
+    },
+    {
+      "path": "datasets/road_export/train/images/day01_000014_jpg.rf.531ab545a8da754fe055f9d1a7c2bb1c.jpg",
+      "action": "copy",
+      "source_sha256": "e38f33cee5f4d76540eca9a00d9e4a0ca5cbd7e0cf8858aeb2186e8755b5ea31",
+      "integrated_sha256": "e38f33cee5f4d76540eca9a00d9e4a0ca5cbd7e0cf8858aeb2186e8755b5ea31"
+    },
+    {
+      "path": "datasets/road_export/train/images/day01_000023_jpg.rf.e8ee2e759c7ba5dfd638e6e3ff57bd36.jpg",
+      "action": "copy",
+      "source_sha256": "d24bd32e71beffeb86f3bb8895c40ff3fafa1bff1edf4ca83b237ffc758e51db",
+      "integrated_sha256": "d24bd32e71beffeb86f3bb8895c40ff3fafa1bff1edf4ca83b237ffc758e51db"
+    },
+    {
+      "path": "datasets/road_export/train/images/day01_000024_jpg.rf.f028e8e6043b0ed19d7692d6532f7c88.jpg",
+      "action": "copy",
+      "source_sha256": "1c12c53a3a923bef33073d8f76dcf1ef74b2166b0116196e3ee9bd8389e0c956",
+      "integrated_sha256": "1c12c53a3a923bef33073d8f76dcf1ef74b2166b0116196e3ee9bd8389e0c956"
+    },
+    {
+      "path": "datasets/road_export/train/labels/day01_000002_jpg.rf.29b31d2395bde0abe1ce5983fa59f36e.txt",
+      "action": "copy",
+      "source_sha256": "42445e72046fc76c809df49c381a69b44c7c772002630e84b13fb11feea38011",
+      "integrated_sha256": "42445e72046fc76c809df49c381a69b44c7c772002630e84b13fb11feea38011"
+    },
+    {
+      "path": "datasets/road_export/train/labels/day01_000004_jpg.rf.7498a51f453e954ec2c3a990e5c7fe29.txt",
+      "action": "copy",
+      "source_sha256": "484e070aa94710ce1ba253ab81720180079b6ca253130d87b24107b10905f917",
+      "integrated_sha256": "484e070aa94710ce1ba253ab81720180079b6ca253130d87b24107b10905f917"
+    },
+    {
+      "path": "datasets/road_export/train/labels/day01_000005_jpg.rf.844dc8031fa6258b5cfe14835ed55484.txt",
+      "action": "copy",
+      "source_sha256": "8ec3c8fcf7174f272c322cc70438e92abefca892c24e31dcc00b273d20806036",
+      "integrated_sha256": "8ec3c8fcf7174f272c322cc70438e92abefca892c24e31dcc00b273d20806036"
+    },
+    {
+      "path": "datasets/road_export/train/labels/day01_000006_jpg.rf.1ffeb8defe6124ccc322bb2a8e664263.txt",
+      "action": "copy",
+      "source_sha256": "15817f9a222e1e4fbed8a6372092575371496571e006aadac04971ada820f162",
+      "integrated_sha256": "15817f9a222e1e4fbed8a6372092575371496571e006aadac04971ada820f162"
+    },
+    {
+      "path": "datasets/road_export/train/labels/day01_000008_jpg.rf.bac9bb7859157dbef85eb927a826a5ba.txt",
+      "action": "copy",
+      "source_sha256": "002dd4ffb9e1ae7566b9b30da76de84f4aa214553ce79fa2220050f2eb87fc49",
+      "integrated_sha256": "002dd4ffb9e1ae7566b9b30da76de84f4aa214553ce79fa2220050f2eb87fc49"
+    },
+    {
+      "path": "datasets/road_export/train/labels/day01_000010_jpg.rf.f5bd0d250df8b0ea3524b29f82d3b704.txt",
+      "action": "copy",
+      "source_sha256": "40b1e84f99b57f0dc07adda2bb55ac03d8771b209890b2161e0fd0f3d30044fa",
+      "integrated_sha256": "40b1e84f99b57f0dc07adda2bb55ac03d8771b209890b2161e0fd0f3d30044fa"
+    },
+    {
+      "path": "datasets/road_export/train/labels/day01_000011_jpg.rf.c9d085c552101ed64af34395ff04c24a.txt",
+      "action": "copy",
+      "source_sha256": "4f0e7e812d34d62ee55b9454251df9365c207536e9d648b68a58972de3444bc8",
+      "integrated_sha256": "4f0e7e812d34d62ee55b9454251df9365c207536e9d648b68a58972de3444bc8"
+    },
+    {
+      "path": "datasets/road_export/train/labels/day01_000012_jpg.rf.3f9a2f7196da8bd534e7dbe2075589a2.txt",
+      "action": "copy",
+      "source_sha256": "b3657be998789ab52e8de186df0a86771f2fd24c98f3228137788f262798288b",
+      "integrated_sha256": "b3657be998789ab52e8de186df0a86771f2fd24c98f3228137788f262798288b"
+    },
+    {
+      "path": "datasets/road_export/train/labels/day01_000013_jpg.rf.723e6241c63794d9c9d346dd5393b5a6.txt",
+      "action": "copy",
+      "source_sha256": "d3bed7ad2a5ac7b794d1edd411133ab13dfbcf9fae1f8279e0b4ba3fefb1df75",
+      "integrated_sha256": "d3bed7ad2a5ac7b794d1edd411133ab13dfbcf9fae1f8279e0b4ba3fefb1df75"
+    },
+    {
+      "path": "datasets/road_export/train/labels/day01_000014_jpg.rf.531ab545a8da754fe055f9d1a7c2bb1c.txt",
+      "action": "copy",
+      "source_sha256": "72cc21a6f771e997de0f027717bc9db3040f4b4b5e09d4274663033a3ade7c54",
+      "integrated_sha256": "72cc21a6f771e997de0f027717bc9db3040f4b4b5e09d4274663033a3ade7c54"
+    },
+    {
+      "path": "datasets/road_export/train/labels/day01_000023_jpg.rf.e8ee2e759c7ba5dfd638e6e3ff57bd36.txt",
+      "action": "copy",
+      "source_sha256": "785be45e916eb1d07fcf23c2973bdbb28fd5ffaef929c270ebbe1e0ec243ade1",
+      "integrated_sha256": "785be45e916eb1d07fcf23c2973bdbb28fd5ffaef929c270ebbe1e0ec243ade1"
+    },
+    {
+      "path": "datasets/road_export/train/labels/day01_000024_jpg.rf.f028e8e6043b0ed19d7692d6532f7c88.txt",
+      "action": "copy",
+      "source_sha256": "f6a9aa5c2c95ae5e227fa3ee429654c0dd9a2a442be35bd9a35e9abc4ed75611",
+      "integrated_sha256": "f6a9aa5c2c95ae5e227fa3ee429654c0dd9a2a442be35bd9a35e9abc4ed75611"
+    },
+    {
+      "path": "datasets/road_export/test/images/day01_000020_jpg.rf.e6541590bb124c0d6675750a866184ed.jpg",
+      "action": "copy",
+      "source_sha256": "0af47730fcadae91b2f2bb7383ba8238b7c43103b0ded5892ff2357cc258e96c",
+      "integrated_sha256": "0af47730fcadae91b2f2bb7383ba8238b7c43103b0ded5892ff2357cc258e96c"
+    },
+    {
+      "path": "datasets/road_export/test/images/day01_000025_jpg.rf.1e6d319ec3ce1684329425038aeaea27.jpg",
+      "action": "copy",
+      "source_sha256": "42e87c42ec64c7e530899e0dd0553c6ab9524982b5e482826675f49d63f3992e",
+      "integrated_sha256": "42e87c42ec64c7e530899e0dd0553c6ab9524982b5e482826675f49d63f3992e"
+    },
+    {
+      "path": "datasets/road_export/test/images/day01_000026_jpg.rf.210351f65b52ba735101c5df56ac8dbe.jpg",
+      "action": "copy",
+      "source_sha256": "269358b26105d6bf11d20e1d9870df9e9908ff8a5cb8619b43e4797feb25885d",
+      "integrated_sha256": "269358b26105d6bf11d20e1d9870df9e9908ff8a5cb8619b43e4797feb25885d"
+    },
+    {
+      "path": "datasets/road_export/test/images/day01_000028_jpg.rf.12013e1cf10cff95526bcdb5eb618d46.jpg",
+      "action": "copy",
+      "source_sha256": "55ba6034edff6338e27773d7a35f24988222c7e46bd005bd5069de7907ae0c75",
+      "integrated_sha256": "55ba6034edff6338e27773d7a35f24988222c7e46bd005bd5069de7907ae0c75"
+    },
+    {
+      "path": "datasets/road_export/test/images/day01_000030_jpg.rf.d187e02b356e0cbbb5e56fc44c064bb9.jpg",
+      "action": "copy",
+      "source_sha256": "44eb86840af9fce5bf550eabe77c7e98aab961546fc608292ee2b87c9a122a49",
+      "integrated_sha256": "44eb86840af9fce5bf550eabe77c7e98aab961546fc608292ee2b87c9a122a49"
+    },
+    {
+      "path": "datasets/road_export/test/labels/day01_000020_jpg.rf.e6541590bb124c0d6675750a866184ed.txt",
+      "action": "copy",
+      "source_sha256": "8553de8ac5767b23dc02cbd9234c2fc414522524b993d9574b4dbb314fc39277",
+      "integrated_sha256": "8553de8ac5767b23dc02cbd9234c2fc414522524b993d9574b4dbb314fc39277"
+    },
+    {
+      "path": "datasets/road_export/test/labels/day01_000025_jpg.rf.1e6d319ec3ce1684329425038aeaea27.txt",
+      "action": "copy",
+      "source_sha256": "878305b23422d1d068f76ea4ac537d727c7cbd8e057a00d2835b736013735678",
+      "integrated_sha256": "878305b23422d1d068f76ea4ac537d727c7cbd8e057a00d2835b736013735678"
+    },
+    {
+      "path": "datasets/road_export/test/labels/day01_000026_jpg.rf.210351f65b52ba735101c5df56ac8dbe.txt",
+      "action": "copy",
+      "source_sha256": "275d0707a09900f6dd1ddf9298171ce0c159b7dbe322d822858ecbce5614701f",
+      "integrated_sha256": "275d0707a09900f6dd1ddf9298171ce0c159b7dbe322d822858ecbce5614701f"
+    },
+    {
+      "path": "datasets/road_export/test/labels/day01_000028_jpg.rf.12013e1cf10cff95526bcdb5eb618d46.txt",
+      "action": "copy",
+      "source_sha256": "d4b1e69faab67ffb63f5c95aa9fc7130226346ce821e16331aaadd1952502085",
+      "integrated_sha256": "d4b1e69faab67ffb63f5c95aa9fc7130226346ce821e16331aaadd1952502085"
+    },
+    {
+      "path": "datasets/road_export/test/labels/day01_000030_jpg.rf.d187e02b356e0cbbb5e56fc44c064bb9.txt",
+      "action": "copy",
+      "source_sha256": "aee48da8e60dd22577ee323b9405f3767cc0abf21e612218dcac02eaf16100f3",
+      "integrated_sha256": "aee48da8e60dd22577ee323b9405f3767cc0abf21e612218dcac02eaf16100f3"
+    },
+    {
+      "path": "datasets/road_base/train/labels.cache",
+      "action": "copy",
+      "source_sha256": "b324a085c92a11962b455dfc056d78eb0d5d9e8f8c0a4a8f0d5a22420d0bad85",
+      "integrated_sha256": "b324a085c92a11962b455dfc056d78eb0d5d9e8f8c0a4a8f0d5a22420d0bad85"
+    },
+    {
+      "path": "datasets/road_base/valid/labels.cache",
+      "action": "copy",
+      "source_sha256": "bb14ea48e10bfa7bade91be5f26008310d514d91d28956f608c1ebb1a30d5a0e",
+      "integrated_sha256": "bb14ea48e10bfa7bade91be5f26008310d514d91d28956f608c1ebb1a30d5a0e"
+    },
+    {
+      "path": "datasets/road_base/valid/images/day01_000001_jpg.rf.c35a72ed84a92da0704242ee6b9605da.jpg",
+      "action": "copy",
+      "source_sha256": "bf1f43597e644c04f6e24a79def8da0752b4158efeb9339a3a69e677c4f19539",
+      "integrated_sha256": "bf1f43597e644c04f6e24a79def8da0752b4158efeb9339a3a69e677c4f19539"
+    },
+    {
+      "path": "datasets/road_base/valid/images/day01_000003_jpg.rf.f65f6e27d42b23d546609beb4f6d4903.jpg",
+      "action": "copy",
+      "source_sha256": "8c8be8291e5707674cdfed5a8183ad31f4e82ce382fe7f8591bc26153b8c4a36",
+      "integrated_sha256": "8c8be8291e5707674cdfed5a8183ad31f4e82ce382fe7f8591bc26153b8c4a36"
+    },
+    {
+      "path": "datasets/road_base/valid/images/day01_000021_jpg.rf.1f0bac9ad59cb4783331560640897903.jpg",
+      "action": "copy",
+      "source_sha256": "950c34e9fe533ca651fa204bfd58a1b60f81eb6cd8d6675b4480c913b7c49159",
+      "integrated_sha256": "950c34e9fe533ca651fa204bfd58a1b60f81eb6cd8d6675b4480c913b7c49159"
+    },
+    {
+      "path": "datasets/road_base/valid/labels/day01_000001_jpg.rf.c35a72ed84a92da0704242ee6b9605da.txt",
+      "action": "copy",
+      "source_sha256": "12eea8fd5b9109a8aeaad54ae84f8c40c8c668476b974d00ad173fa612eab74c",
+      "integrated_sha256": "12eea8fd5b9109a8aeaad54ae84f8c40c8c668476b974d00ad173fa612eab74c"
+    },
+    {
+      "path": "datasets/road_base/valid/labels/day01_000003_jpg.rf.f65f6e27d42b23d546609beb4f6d4903.txt",
+      "action": "copy",
+      "source_sha256": "e27ef3a7c56691aafe171b0e9246e71555bd89a3aea9820b76a3c9b97f73ef43",
+      "integrated_sha256": "e27ef3a7c56691aafe171b0e9246e71555bd89a3aea9820b76a3c9b97f73ef43"
+    },
+    {
+      "path": "datasets/road_base/valid/labels/day01_000021_jpg.rf.1f0bac9ad59cb4783331560640897903.txt",
+      "action": "copy",
+      "source_sha256": "82236560336c5b539765fcb2dd91b6ce49f6a1204057a34fe9b59767b9af5ab4",
+      "integrated_sha256": "82236560336c5b539765fcb2dd91b6ce49f6a1204057a34fe9b59767b9af5ab4"
+    },
+    {
+      "path": "datasets/road_base/train/images/day01_000002_jpg.rf.29b31d2395bde0abe1ce5983fa59f36e.jpg",
+      "action": "copy",
+      "source_sha256": "e3191218015fae124f93c0885541e4b6fb3b9699235e91d4886975d30d03326e",
+      "integrated_sha256": "e3191218015fae124f93c0885541e4b6fb3b9699235e91d4886975d30d03326e"
+    },
+    {
+      "path": "datasets/road_base/train/images/day01_000004_jpg.rf.7498a51f453e954ec2c3a990e5c7fe29.jpg",
+      "action": "copy",
+      "source_sha256": "e2e97e360eb145482fa9bd5ae9d6a4ed4d7f5705c2c0aa85c08f23a15516a46b",
+      "integrated_sha256": "e2e97e360eb145482fa9bd5ae9d6a4ed4d7f5705c2c0aa85c08f23a15516a46b"
+    },
+    {
+      "path": "datasets/road_base/train/images/day01_000005_jpg.rf.844dc8031fa6258b5cfe14835ed55484.jpg",
+      "action": "copy",
+      "source_sha256": "e8ce24b423ab2f947d37fe69452c45543359648f918861e16cd9d7f25af18cbd",
+      "integrated_sha256": "e8ce24b423ab2f947d37fe69452c45543359648f918861e16cd9d7f25af18cbd"
+    },
+    {
+      "path": "datasets/road_base/train/images/day01_000006_jpg.rf.1ffeb8defe6124ccc322bb2a8e664263.jpg",
+      "action": "copy",
+      "source_sha256": "616130e0fffd1efc0b003d0bc2433deae0558ddc2889ab21f35b6b2b2c4cfd94",
+      "integrated_sha256": "616130e0fffd1efc0b003d0bc2433deae0558ddc2889ab21f35b6b2b2c4cfd94"
+    },
+    {
+      "path": "datasets/road_base/train/images/day01_000008_jpg.rf.bac9bb7859157dbef85eb927a826a5ba.jpg",
+      "action": "copy",
+      "source_sha256": "6bc213e1c3d7aed5021161cfca97b57fdaab1917c5951bc09723db102b02149f",
+      "integrated_sha256": "6bc213e1c3d7aed5021161cfca97b57fdaab1917c5951bc09723db102b02149f"
+    },
+    {
+      "path": "datasets/road_base/train/images/day01_000010_jpg.rf.f5bd0d250df8b0ea3524b29f82d3b704.jpg",
+      "action": "copy",
+      "source_sha256": "955e6ac3272c8dc29a13c72d598b16d37dd8a918bacc9bcc51b748de7b4c5e03",
+      "integrated_sha256": "955e6ac3272c8dc29a13c72d598b16d37dd8a918bacc9bcc51b748de7b4c5e03"
+    },
+    {
+      "path": "datasets/road_base/train/images/day01_000011_jpg.rf.c9d085c552101ed64af34395ff04c24a.jpg",
+      "action": "copy",
+      "source_sha256": "183b6874e0b98a392b97268f42d19986ce7210dd84458f9717fbae24fda96605",
+      "integrated_sha256": "183b6874e0b98a392b97268f42d19986ce7210dd84458f9717fbae24fda96605"
+    },
+    {
+      "path": "datasets/road_base/train/images/day01_000012_jpg.rf.3f9a2f7196da8bd534e7dbe2075589a2.jpg",
+      "action": "copy",
+      "source_sha256": "519b21c223a06dc09a0b32f22bbdf55849a04f11e06e12dd15e3214857256631",
+      "integrated_sha256": "519b21c223a06dc09a0b32f22bbdf55849a04f11e06e12dd15e3214857256631"
+    },
+    {
+      "path": "datasets/road_base/train/images/day01_000013_jpg.rf.723e6241c63794d9c9d346dd5393b5a6.jpg",
+      "action": "copy",
+      "source_sha256": "60b9cb2e16c163cb3a73ab45c0d38c845dc1bdb041912b5744422ce0d09a99d3",
+      "integrated_sha256": "60b9cb2e16c163cb3a73ab45c0d38c845dc1bdb041912b5744422ce0d09a99d3"
+    },
+    {
+      "path": "datasets/road_base/train/images/day01_000014_jpg.rf.531ab545a8da754fe055f9d1a7c2bb1c.jpg",
+      "action": "copy",
+      "source_sha256": "e38f33cee5f4d76540eca9a00d9e4a0ca5cbd7e0cf8858aeb2186e8755b5ea31",
+      "integrated_sha256": "e38f33cee5f4d76540eca9a00d9e4a0ca5cbd7e0cf8858aeb2186e8755b5ea31"
+    },
+    {
+      "path": "datasets/road_base/train/images/day01_000023_jpg.rf.e8ee2e759c7ba5dfd638e6e3ff57bd36.jpg",
+      "action": "copy",
+      "source_sha256": "d24bd32e71beffeb86f3bb8895c40ff3fafa1bff1edf4ca83b237ffc758e51db",
+      "integrated_sha256": "d24bd32e71beffeb86f3bb8895c40ff3fafa1bff1edf4ca83b237ffc758e51db"
+    },
+    {
+      "path": "datasets/road_base/train/images/day01_000024_jpg.rf.f028e8e6043b0ed19d7692d6532f7c88.jpg",
+      "action": "copy",
+      "source_sha256": "1c12c53a3a923bef33073d8f76dcf1ef74b2166b0116196e3ee9bd8389e0c956",
+      "integrated_sha256": "1c12c53a3a923bef33073d8f76dcf1ef74b2166b0116196e3ee9bd8389e0c956"
+    },
+    {
+      "path": "datasets/road_base/train/labels/day01_000002_jpg.rf.29b31d2395bde0abe1ce5983fa59f36e.txt",
+      "action": "copy",
+      "source_sha256": "42445e72046fc76c809df49c381a69b44c7c772002630e84b13fb11feea38011",
+      "integrated_sha256": "42445e72046fc76c809df49c381a69b44c7c772002630e84b13fb11feea38011"
+    },
+    {
+      "path": "datasets/road_base/train/labels/day01_000004_jpg.rf.7498a51f453e954ec2c3a990e5c7fe29.txt",
+      "action": "copy",
+      "source_sha256": "484e070aa94710ce1ba253ab81720180079b6ca253130d87b24107b10905f917",
+      "integrated_sha256": "484e070aa94710ce1ba253ab81720180079b6ca253130d87b24107b10905f917"
+    },
+    {
+      "path": "datasets/road_base/train/labels/day01_000005_jpg.rf.844dc8031fa6258b5cfe14835ed55484.txt",
+      "action": "copy",
+      "source_sha256": "8ec3c8fcf7174f272c322cc70438e92abefca892c24e31dcc00b273d20806036",
+      "integrated_sha256": "8ec3c8fcf7174f272c322cc70438e92abefca892c24e31dcc00b273d20806036"
+    },
+    {
+      "path": "datasets/road_base/train/labels/day01_000006_jpg.rf.1ffeb8defe6124ccc322bb2a8e664263.txt",
+      "action": "copy",
+      "source_sha256": "15817f9a222e1e4fbed8a6372092575371496571e006aadac04971ada820f162",
+      "integrated_sha256": "15817f9a222e1e4fbed8a6372092575371496571e006aadac04971ada820f162"
+    },
+    {
+      "path": "datasets/road_base/train/labels/day01_000008_jpg.rf.bac9bb7859157dbef85eb927a826a5ba.txt",
+      "action": "copy",
+      "source_sha256": "002dd4ffb9e1ae7566b9b30da76de84f4aa214553ce79fa2220050f2eb87fc49",
+      "integrated_sha256": "002dd4ffb9e1ae7566b9b30da76de84f4aa214553ce79fa2220050f2eb87fc49"
+    },
+    {
+      "path": "datasets/road_base/train/labels/day01_000010_jpg.rf.f5bd0d250df8b0ea3524b29f82d3b704.txt",
+      "action": "copy",
+      "source_sha256": "40b1e84f99b57f0dc07adda2bb55ac03d8771b209890b2161e0fd0f3d30044fa",
+      "integrated_sha256": "40b1e84f99b57f0dc07adda2bb55ac03d8771b209890b2161e0fd0f3d30044fa"
+    },
+    {
+      "path": "datasets/road_base/train/labels/day01_000011_jpg.rf.c9d085c552101ed64af34395ff04c24a.txt",
+      "action": "copy",
+      "source_sha256": "4f0e7e812d34d62ee55b9454251df9365c207536e9d648b68a58972de3444bc8",
+      "integrated_sha256": "4f0e7e812d34d62ee55b9454251df9365c207536e9d648b68a58972de3444bc8"
+    },
+    {
+      "path": "datasets/road_base/train/labels/day01_000012_jpg.rf.3f9a2f7196da8bd534e7dbe2075589a2.txt",
+      "action": "copy",
+      "source_sha256": "b3657be998789ab52e8de186df0a86771f2fd24c98f3228137788f262798288b",
+      "integrated_sha256": "b3657be998789ab52e8de186df0a86771f2fd24c98f3228137788f262798288b"
+    },
+    {
+      "path": "datasets/road_base/train/labels/day01_000013_jpg.rf.723e6241c63794d9c9d346dd5393b5a6.txt",
+      "action": "copy",
+      "source_sha256": "d3bed7ad2a5ac7b794d1edd411133ab13dfbcf9fae1f8279e0b4ba3fefb1df75",
+      "integrated_sha256": "d3bed7ad2a5ac7b794d1edd411133ab13dfbcf9fae1f8279e0b4ba3fefb1df75"
+    },
+    {
+      "path": "datasets/road_base/train/labels/day01_000014_jpg.rf.531ab545a8da754fe055f9d1a7c2bb1c.txt",
+      "action": "copy",
+      "source_sha256": "72cc21a6f771e997de0f027717bc9db3040f4b4b5e09d4274663033a3ade7c54",
+      "integrated_sha256": "72cc21a6f771e997de0f027717bc9db3040f4b4b5e09d4274663033a3ade7c54"
+    },
+    {
+      "path": "datasets/road_base/train/labels/day01_000023_jpg.rf.e8ee2e759c7ba5dfd638e6e3ff57bd36.txt",
+      "action": "copy",
+      "source_sha256": "785be45e916eb1d07fcf23c2973bdbb28fd5ffaef929c270ebbe1e0ec243ade1",
+      "integrated_sha256": "785be45e916eb1d07fcf23c2973bdbb28fd5ffaef929c270ebbe1e0ec243ade1"
+    },
+    {
+      "path": "datasets/road_base/train/labels/day01_000024_jpg.rf.f028e8e6043b0ed19d7692d6532f7c88.txt",
+      "action": "copy",
+      "source_sha256": "f6a9aa5c2c95ae5e227fa3ee429654c0dd9a2a442be35bd9a35e9abc4ed75611",
+      "integrated_sha256": "f6a9aa5c2c95ae5e227fa3ee429654c0dd9a2a442be35bd9a35e9abc4ed75611"
+    },
+    {
+      "path": "datasets/road_base/test/images/day01_000020_jpg.rf.e6541590bb124c0d6675750a866184ed.jpg",
+      "action": "copy",
+      "source_sha256": "0af47730fcadae91b2f2bb7383ba8238b7c43103b0ded5892ff2357cc258e96c",
+      "integrated_sha256": "0af47730fcadae91b2f2bb7383ba8238b7c43103b0ded5892ff2357cc258e96c"
+    },
+    {
+      "path": "datasets/road_base/test/images/day01_000025_jpg.rf.1e6d319ec3ce1684329425038aeaea27.jpg",
+      "action": "copy",
+      "source_sha256": "42e87c42ec64c7e530899e0dd0553c6ab9524982b5e482826675f49d63f3992e",
+      "integrated_sha256": "42e87c42ec64c7e530899e0dd0553c6ab9524982b5e482826675f49d63f3992e"
+    },
+    {
+      "path": "datasets/road_base/test/images/day01_000026_jpg.rf.210351f65b52ba735101c5df56ac8dbe.jpg",
+      "action": "copy",
+      "source_sha256": "269358b26105d6bf11d20e1d9870df9e9908ff8a5cb8619b43e4797feb25885d",
+      "integrated_sha256": "269358b26105d6bf11d20e1d9870df9e9908ff8a5cb8619b43e4797feb25885d"
+    },
+    {
+      "path": "datasets/road_base/test/images/day01_000028_jpg.rf.12013e1cf10cff95526bcdb5eb618d46.jpg",
+      "action": "copy",
+      "source_sha256": "55ba6034edff6338e27773d7a35f24988222c7e46bd005bd5069de7907ae0c75",
+      "integrated_sha256": "55ba6034edff6338e27773d7a35f24988222c7e46bd005bd5069de7907ae0c75"
+    },
+    {
+      "path": "datasets/road_base/test/images/day01_000030_jpg.rf.d187e02b356e0cbbb5e56fc44c064bb9.jpg",
+      "action": "copy",
+      "source_sha256": "44eb86840af9fce5bf550eabe77c7e98aab961546fc608292ee2b87c9a122a49",
+      "integrated_sha256": "44eb86840af9fce5bf550eabe77c7e98aab961546fc608292ee2b87c9a122a49"
+    },
+    {
+      "path": "datasets/road_base/test/labels/day01_000020_jpg.rf.e6541590bb124c0d6675750a866184ed.txt",
+      "action": "copy",
+      "source_sha256": "8553de8ac5767b23dc02cbd9234c2fc414522524b993d9574b4dbb314fc39277",
+      "integrated_sha256": "8553de8ac5767b23dc02cbd9234c2fc414522524b993d9574b4dbb314fc39277"
+    },
+    {
+      "path": "datasets/road_base/test/labels/day01_000025_jpg.rf.1e6d319ec3ce1684329425038aeaea27.txt",
+      "action": "copy",
+      "source_sha256": "878305b23422d1d068f76ea4ac537d727c7cbd8e057a00d2835b736013735678",
+      "integrated_sha256": "878305b23422d1d068f76ea4ac537d727c7cbd8e057a00d2835b736013735678"
+    },
+    {
+      "path": "datasets/road_base/test/labels/day01_000026_jpg.rf.210351f65b52ba735101c5df56ac8dbe.txt",
+      "action": "copy",
+      "source_sha256": "275d0707a09900f6dd1ddf9298171ce0c159b7dbe322d822858ecbce5614701f",
+      "integrated_sha256": "275d0707a09900f6dd1ddf9298171ce0c159b7dbe322d822858ecbce5614701f"
+    },
+    {
+      "path": "datasets/road_base/test/labels/day01_000028_jpg.rf.12013e1cf10cff95526bcdb5eb618d46.txt",
+      "action": "copy",
+      "source_sha256": "d4b1e69faab67ffb63f5c95aa9fc7130226346ce821e16331aaadd1952502085",
+      "integrated_sha256": "d4b1e69faab67ffb63f5c95aa9fc7130226346ce821e16331aaadd1952502085"
+    },
+    {
+      "path": "datasets/road_base/test/labels/day01_000030_jpg.rf.d187e02b356e0cbbb5e56fc44c064bb9.txt",
+      "action": "copy",
+      "source_sha256": "aee48da8e60dd22577ee323b9405f3767cc0abf21e612218dcac02eaf16100f3",
+      "integrated_sha256": "aee48da8e60dd22577ee323b9405f3767cc0abf21e612218dcac02eaf16100f3"
+    },
+    {
+      "path": "weights/ultralytics/yolo26/yolo26n/yolo26n.pt",
+      "action": "copy",
+      "source_sha256": "9b09cc8bf347f0fc8a5f7657480587f25db09b34bf33b0652110fb03a8ad4fef",
+      "integrated_sha256": "9b09cc8bf347f0fc8a5f7657480587f25db09b34bf33b0652110fb03a8ad4fef"
+    },
+    {
+      "path": "runs/segment/runs/road/baseline_v1/args.yaml",
+      "action": "copy",
+      "source_sha256": "23e2f959dfe73825266193d09029e4358479eba2ad0a100f27cc92c0f9caefe1",
+      "integrated_sha256": "23e2f959dfe73825266193d09029e4358479eba2ad0a100f27cc92c0f9caefe1"
+    },
+    {
+      "path": "runs/segment/runs/road/baseline_v1/BoxF1_curve.png",
+      "action": "copy",
+      "source_sha256": "cacf3b7a053ca290407d9a65dddb7d1c4c58454a9c947ac1ca7c4fe6578693fa",
+      "integrated_sha256": "cacf3b7a053ca290407d9a65dddb7d1c4c58454a9c947ac1ca7c4fe6578693fa"
+    },
+    {
+      "path": "runs/segment/runs/road/baseline_v1/BoxPR_curve.png",
+      "action": "copy",
+      "source_sha256": "69e51032edcc42350b49d564a4593056eb14aa069410f108849afc584eeefc3f",
+      "integrated_sha256": "69e51032edcc42350b49d564a4593056eb14aa069410f108849afc584eeefc3f"
+    },
+    {
+      "path": "runs/segment/runs/road/baseline_v1/BoxP_curve.png",
+      "action": "copy",
+      "source_sha256": "450ee9bc3fcb82f4da58040858889d31d28b9a93b60976a7fb20e83dc425b999",
+      "integrated_sha256": "450ee9bc3fcb82f4da58040858889d31d28b9a93b60976a7fb20e83dc425b999"
+    },
+    {
+      "path": "runs/segment/runs/road/baseline_v1/BoxR_curve.png",
+      "action": "copy",
+      "source_sha256": "4c7da62fa6113aa6c8680fafa062532d50d58602e85743c63e2308b5c9d50c3a",
+      "integrated_sha256": "4c7da62fa6113aa6c8680fafa062532d50d58602e85743c63e2308b5c9d50c3a"
+    },
+    {
+      "path": "runs/segment/runs/road/baseline_v1/confusion_matrix.png",
+      "action": "copy",
+      "source_sha256": "26f716a6212446a0c960f6309a952fb649447083a9da4abc08b1bbab04dd2f8d",
+      "integrated_sha256": "26f716a6212446a0c960f6309a952fb649447083a9da4abc08b1bbab04dd2f8d"
+    },
+    {
+      "path": "runs/segment/runs/road/baseline_v1/confusion_matrix_normalized.png",
+      "action": "copy",
+      "source_sha256": "e9459d48d2a6a660cc7a33652a3e7a361c7fa596e7014efd98e71b72dfb8df59",
+      "integrated_sha256": "e9459d48d2a6a660cc7a33652a3e7a361c7fa596e7014efd98e71b72dfb8df59"
+    },
+    {
+      "path": "runs/segment/runs/road/baseline_v1/labels.jpg",
+      "action": "copy",
+      "source_sha256": "8eed6fc7dd0a9658a4aad1117852cb19867b83eb1316c034cc4f282102ed305f",
+      "integrated_sha256": "8eed6fc7dd0a9658a4aad1117852cb19867b83eb1316c034cc4f282102ed305f"
+    },
+    {
+      "path": "runs/segment/runs/road/baseline_v1/MaskF1_curve.png",
+      "action": "copy",
+      "source_sha256": "cacf3b7a053ca290407d9a65dddb7d1c4c58454a9c947ac1ca7c4fe6578693fa",
+      "integrated_sha256": "cacf3b7a053ca290407d9a65dddb7d1c4c58454a9c947ac1ca7c4fe6578693fa"
+    },
+    {
+      "path": "runs/segment/runs/road/baseline_v1/MaskPR_curve.png",
+      "action": "copy",
+      "source_sha256": "69e51032edcc42350b49d564a4593056eb14aa069410f108849afc584eeefc3f",
+      "integrated_sha256": "69e51032edcc42350b49d564a4593056eb14aa069410f108849afc584eeefc3f"
+    },
+    {
+      "path": "runs/segment/runs/road/baseline_v1/MaskP_curve.png",
+      "action": "copy",
+      "source_sha256": "450ee9bc3fcb82f4da58040858889d31d28b9a93b60976a7fb20e83dc425b999",
+      "integrated_sha256": "450ee9bc3fcb82f4da58040858889d31d28b9a93b60976a7fb20e83dc425b999"
+    },
+    {
+      "path": "runs/segment/runs/road/baseline_v1/MaskR_curve.png",
+      "action": "copy",
+      "source_sha256": "4c7da62fa6113aa6c8680fafa062532d50d58602e85743c63e2308b5c9d50c3a",
+      "integrated_sha256": "4c7da62fa6113aa6c8680fafa062532d50d58602e85743c63e2308b5c9d50c3a"
+    },
+    {
+      "path": "runs/segment/runs/road/baseline_v1/results.csv",
+      "action": "copy",
+      "source_sha256": "0bf618355c3b56198c1b817ee53368f8436506bcf21d42d0ae1d365fd771b63e",
+      "integrated_sha256": "0bf618355c3b56198c1b817ee53368f8436506bcf21d42d0ae1d365fd771b63e"
+    },
+    {
+      "path": "runs/segment/runs/road/baseline_v1/results.png",
+      "action": "copy",
+      "source_sha256": "9e07388976895e0c41eb7ebd32fe8b3b28cadbc3bb5785e30e901e0117aed88d",
+      "integrated_sha256": "9e07388976895e0c41eb7ebd32fe8b3b28cadbc3bb5785e30e901e0117aed88d"
+    },
+    {
+      "path": "runs/segment/runs/road/baseline_v1/train_batch0.jpg",
+      "action": "copy",
+      "source_sha256": "5b31c7e115c683b172c97c70bcb643eca25404401d5a1a8f8cc053a549cb28c0",
+      "integrated_sha256": "5b31c7e115c683b172c97c70bcb643eca25404401d5a1a8f8cc053a549cb28c0"
+    },
+    {
+      "path": "runs/segment/runs/road/baseline_v1/train_batch1.jpg",
+      "action": "copy",
+      "source_sha256": "773be5467d495cfab82a812f9de4990835a040a401a8fe0859ed9a3eb3e702bc",
+      "integrated_sha256": "773be5467d495cfab82a812f9de4990835a040a401a8fe0859ed9a3eb3e702bc"
+    },
+    {
+      "path": "runs/segment/runs/road/baseline_v1/train_batch2.jpg",
+      "action": "copy",
+      "source_sha256": "176e04126253a7885ea1d79c94f982332a71257e8c92ef4df6a31e6158e2c2e1",
+      "integrated_sha256": "176e04126253a7885ea1d79c94f982332a71257e8c92ef4df6a31e6158e2c2e1"
+    },
+    {
+      "path": "runs/segment/runs/road/baseline_v1/train_batch80.jpg",
+      "action": "copy",
+      "source_sha256": "bb0722c06ea97431f20688170355d5afd12cce499704575399448748fa32f7cb",
+      "integrated_sha256": "bb0722c06ea97431f20688170355d5afd12cce499704575399448748fa32f7cb"
+    },
+    {
+      "path": "runs/segment/runs/road/baseline_v1/train_batch81.jpg",
+      "action": "copy",
+      "source_sha256": "72594750b4f554da3a9d3b1efcf86ee963354704a6290d21e56a8de38bbd0866",
+      "integrated_sha256": "72594750b4f554da3a9d3b1efcf86ee963354704a6290d21e56a8de38bbd0866"
+    },
+    {
+      "path": "runs/segment/runs/road/baseline_v1/train_batch82.jpg",
+      "action": "copy",
+      "source_sha256": "b93546c3707cb37ac60dcc81e86912394c6e57a721513493cc81b77616a954b2",
+      "integrated_sha256": "b93546c3707cb37ac60dcc81e86912394c6e57a721513493cc81b77616a954b2"
+    },
+    {
+      "path": "runs/segment/runs/road/baseline_v1/val_batch0_labels.jpg",
+      "action": "copy",
+      "source_sha256": "5808e36ec5e7c7e5aa48f6974f6c4d8fd96411b29eea15ce9a9be6c35d70caa5",
+      "integrated_sha256": "5808e36ec5e7c7e5aa48f6974f6c4d8fd96411b29eea15ce9a9be6c35d70caa5"
+    },
+    {
+      "path": "runs/segment/runs/road/baseline_v1/val_batch0_pred.jpg",
+      "action": "copy",
+      "source_sha256": "7208b098cc0a10e8a790b58a028e8cc6807f15ecf5f0a69500a1198c7fa95ebe",
+      "integrated_sha256": "7208b098cc0a10e8a790b58a028e8cc6807f15ecf5f0a69500a1198c7fa95ebe"
+    },
+    {
+      "path": "runs/segment/runs/road/baseline_v1-2/args.yaml",
+      "action": "copy",
+      "source_sha256": "7251b9b2b5200026cccc9687842074870e51bb4e43b1d06ef72a1805987dc157",
+      "integrated_sha256": "7251b9b2b5200026cccc9687842074870e51bb4e43b1d06ef72a1805987dc157"
+    },
+    {
+      "path": "runs/segment/runs/road/baseline_v1-2/BoxF1_curve.png",
+      "action": "copy",
+      "source_sha256": "cacf3b7a053ca290407d9a65dddb7d1c4c58454a9c947ac1ca7c4fe6578693fa",
+      "integrated_sha256": "cacf3b7a053ca290407d9a65dddb7d1c4c58454a9c947ac1ca7c4fe6578693fa"
+    },
+    {
+      "path": "runs/segment/runs/road/baseline_v1-2/BoxPR_curve.png",
+      "action": "copy",
+      "source_sha256": "69e51032edcc42350b49d564a4593056eb14aa069410f108849afc584eeefc3f",
+      "integrated_sha256": "69e51032edcc42350b49d564a4593056eb14aa069410f108849afc584eeefc3f"
+    },
+    {
+      "path": "runs/segment/runs/road/baseline_v1-2/BoxP_curve.png",
+      "action": "copy",
+      "source_sha256": "450ee9bc3fcb82f4da58040858889d31d28b9a93b60976a7fb20e83dc425b999",
+      "integrated_sha256": "450ee9bc3fcb82f4da58040858889d31d28b9a93b60976a7fb20e83dc425b999"
+    },
+    {
+      "path": "runs/segment/runs/road/baseline_v1-2/BoxR_curve.png",
+      "action": "copy",
+      "source_sha256": "4c7da62fa6113aa6c8680fafa062532d50d58602e85743c63e2308b5c9d50c3a",
+      "integrated_sha256": "4c7da62fa6113aa6c8680fafa062532d50d58602e85743c63e2308b5c9d50c3a"
+    },
+    {
+      "path": "runs/segment/runs/road/baseline_v1-2/confusion_matrix.png",
+      "action": "copy",
+      "source_sha256": "26f716a6212446a0c960f6309a952fb649447083a9da4abc08b1bbab04dd2f8d",
+      "integrated_sha256": "26f716a6212446a0c960f6309a952fb649447083a9da4abc08b1bbab04dd2f8d"
+    },
+    {
+      "path": "runs/segment/runs/road/baseline_v1-2/confusion_matrix_normalized.png",
+      "action": "copy",
+      "source_sha256": "e9459d48d2a6a660cc7a33652a3e7a361c7fa596e7014efd98e71b72dfb8df59",
+      "integrated_sha256": "e9459d48d2a6a660cc7a33652a3e7a361c7fa596e7014efd98e71b72dfb8df59"
+    },
+    {
+      "path": "runs/segment/runs/road/baseline_v1-2/labels.jpg",
+      "action": "copy",
+      "source_sha256": "8eed6fc7dd0a9658a4aad1117852cb19867b83eb1316c034cc4f282102ed305f",
+      "integrated_sha256": "8eed6fc7dd0a9658a4aad1117852cb19867b83eb1316c034cc4f282102ed305f"
+    },
+    {
+      "path": "runs/segment/runs/road/baseline_v1-2/MaskF1_curve.png",
+      "action": "copy",
+      "source_sha256": "cacf3b7a053ca290407d9a65dddb7d1c4c58454a9c947ac1ca7c4fe6578693fa",
+      "integrated_sha256": "cacf3b7a053ca290407d9a65dddb7d1c4c58454a9c947ac1ca7c4fe6578693fa"
+    },
+    {
+      "path": "runs/segment/runs/road/baseline_v1-2/MaskPR_curve.png",
+      "action": "copy",
+      "source_sha256": "69e51032edcc42350b49d564a4593056eb14aa069410f108849afc584eeefc3f",
+      "integrated_sha256": "69e51032edcc42350b49d564a4593056eb14aa069410f108849afc584eeefc3f"
+    },
+    {
+      "path": "runs/segment/runs/road/baseline_v1-2/MaskP_curve.png",
+      "action": "copy",
+      "source_sha256": "450ee9bc3fcb82f4da58040858889d31d28b9a93b60976a7fb20e83dc425b999",
+      "integrated_sha256": "450ee9bc3fcb82f4da58040858889d31d28b9a93b60976a7fb20e83dc425b999"
+    },
+    {
+      "path": "runs/segment/runs/road/baseline_v1-2/MaskR_curve.png",
+      "action": "copy",
+      "source_sha256": "4c7da62fa6113aa6c8680fafa062532d50d58602e85743c63e2308b5c9d50c3a",
+      "integrated_sha256": "4c7da62fa6113aa6c8680fafa062532d50d58602e85743c63e2308b5c9d50c3a"
+    },
+    {
+      "path": "runs/segment/runs/road/baseline_v1-2/results.csv",
+      "action": "copy",
+      "source_sha256": "3ff011ad2f637e626fccbdd85e00efcb5fa1f2cca16ba73cc4129ebe062ebdc4",
+      "integrated_sha256": "3ff011ad2f637e626fccbdd85e00efcb5fa1f2cca16ba73cc4129ebe062ebdc4"
+    },
+    {
+      "path": "runs/segment/runs/road/baseline_v1-2/results.png",
+      "action": "copy",
+      "source_sha256": "9e07388976895e0c41eb7ebd32fe8b3b28cadbc3bb5785e30e901e0117aed88d",
+      "integrated_sha256": "9e07388976895e0c41eb7ebd32fe8b3b28cadbc3bb5785e30e901e0117aed88d"
+    },
+    {
+      "path": "runs/segment/runs/road/baseline_v1-2/train_batch0.jpg",
+      "action": "copy",
+      "source_sha256": "5b31c7e115c683b172c97c70bcb643eca25404401d5a1a8f8cc053a549cb28c0",
+      "integrated_sha256": "5b31c7e115c683b172c97c70bcb643eca25404401d5a1a8f8cc053a549cb28c0"
+    },
+    {
+      "path": "runs/segment/runs/road/baseline_v1-2/train_batch1.jpg",
+      "action": "copy",
+      "source_sha256": "773be5467d495cfab82a812f9de4990835a040a401a8fe0859ed9a3eb3e702bc",
+      "integrated_sha256": "773be5467d495cfab82a812f9de4990835a040a401a8fe0859ed9a3eb3e702bc"
+    },
+    {
+      "path": "runs/segment/runs/road/baseline_v1-2/train_batch2.jpg",
+      "action": "copy",
+      "source_sha256": "176e04126253a7885ea1d79c94f982332a71257e8c92ef4df6a31e6158e2c2e1",
+      "integrated_sha256": "176e04126253a7885ea1d79c94f982332a71257e8c92ef4df6a31e6158e2c2e1"
+    },
+    {
+      "path": "runs/segment/runs/road/baseline_v1-2/train_batch80.jpg",
+      "action": "copy",
+      "source_sha256": "bb0722c06ea97431f20688170355d5afd12cce499704575399448748fa32f7cb",
+      "integrated_sha256": "bb0722c06ea97431f20688170355d5afd12cce499704575399448748fa32f7cb"
+    },
+    {
+      "path": "runs/segment/runs/road/baseline_v1-2/train_batch81.jpg",
+      "action": "copy",
+      "source_sha256": "72594750b4f554da3a9d3b1efcf86ee963354704a6290d21e56a8de38bbd0866",
+      "integrated_sha256": "72594750b4f554da3a9d3b1efcf86ee963354704a6290d21e56a8de38bbd0866"
+    },
+    {
+      "path": "runs/segment/runs/road/baseline_v1-2/train_batch82.jpg",
+      "action": "copy",
+      "source_sha256": "b93546c3707cb37ac60dcc81e86912394c6e57a721513493cc81b77616a954b2",
+      "integrated_sha256": "b93546c3707cb37ac60dcc81e86912394c6e57a721513493cc81b77616a954b2"
+    },
+    {
+      "path": "runs/segment/runs/road/baseline_v1-2/val_batch0_labels.jpg",
+      "action": "copy",
+      "source_sha256": "5808e36ec5e7c7e5aa48f6974f6c4d8fd96411b29eea15ce9a9be6c35d70caa5",
+      "integrated_sha256": "5808e36ec5e7c7e5aa48f6974f6c4d8fd96411b29eea15ce9a9be6c35d70caa5"
+    },
+    {
+      "path": "runs/segment/runs/road/baseline_v1-2/val_batch0_pred.jpg",
+      "action": "copy",
+      "source_sha256": "7208b098cc0a10e8a790b58a028e8cc6807f15ecf5f0a69500a1198c7fa95ebe",
+      "integrated_sha256": "7208b098cc0a10e8a790b58a028e8cc6807f15ecf5f0a69500a1198c7fa95ebe"
+    },
+    {
+      "path": "runs/segment/runs/road/baseline_v1-2/weights/best.pt",
+      "action": "copy",
+      "source_sha256": "0a2651806e4e30e0a5568e3415a01e571f8f6a874ab21ede7641f57fb4ef164d",
+      "integrated_sha256": "0a2651806e4e30e0a5568e3415a01e571f8f6a874ab21ede7641f57fb4ef164d"
+    },
+    {
+      "path": "runs/segment/runs/road/baseline_v1-2/weights/last.pt",
+      "action": "copy",
+      "source_sha256": "406887ef8767a336c089f286c12cce20951eeb1318b73a439a133a08e1fb87ba",
+      "integrated_sha256": "406887ef8767a336c089f286c12cce20951eeb1318b73a439a133a08e1fb87ba"
+    },
+    {
+      "path": "runs/segment/runs/road/baseline_v1-2/weights/best_ncnn_model/metadata.yaml",
+      "action": "copy",
+      "source_sha256": "8db2906fc40c44663e04dab201ef71132eeb28dcb533bf1cc7187d96f9f52d52",
+      "integrated_sha256": "8db2906fc40c44663e04dab201ef71132eeb28dcb533bf1cc7187d96f9f52d52"
+    },
+    {
+      "path": "runs/segment/runs/road/baseline_v1-2/weights/best_ncnn_model/model.ncnn.bin",
+      "action": "copy",
+      "source_sha256": "b8875729ed99f8caea75787f6dfd3ff881c8a2ca86e2142d04ff9a3fa394548f",
+      "integrated_sha256": "b8875729ed99f8caea75787f6dfd3ff881c8a2ca86e2142d04ff9a3fa394548f"
+    },
+    {
+      "path": "runs/segment/runs/road/baseline_v1-2/weights/best_ncnn_model/model.ncnn.param",
+      "action": "copy",
+      "source_sha256": "a58ed9dab7b43949738b4f37e18a263390eea9060141779918fc6e0bc4860ff0",
+      "integrated_sha256": "a58ed9dab7b43949738b4f37e18a263390eea9060141779918fc6e0bc4860ff0"
+    },
+    {
+      "path": "runs/segment/runs/road/baseline_v1-2/weights/best_ncnn_model/model_ncnn.py",
+      "action": "copy",
+      "source_sha256": "fc7d95eee18f5f3b77c3c4f4cbccf63b6165e649a2b10f184ccee3b2bb2a0559",
+      "integrated_sha256": "fc7d95eee18f5f3b77c3c4f4cbccf63b6165e649a2b10f184ccee3b2bb2a0559"
+    },
+    {
+      "path": "runs/segment/runs/road/baseline_v1/weights/best.pt",
+      "action": "copy",
+      "source_sha256": "3846dfe4460abd98320671cdceb21f13c606008a654375ce0779c4e5e7c13d5e",
+      "integrated_sha256": "3846dfe4460abd98320671cdceb21f13c606008a654375ce0779c4e5e7c13d5e"
+    },
+    {
+      "path": "runs/segment/runs/road/baseline_v1/weights/last.pt",
+      "action": "copy",
+      "source_sha256": "c2364787c82e99e786444b1c2692e353fd2b630de5e061f53833685161023e7f",
+      "integrated_sha256": "c2364787c82e99e786444b1c2692e353fd2b630de5e061f53833685161023e7f"
+    },
+    {
+      "path": "runs/detect/kingfisher-raccoon-2/traffic-light/train/args.yaml",
+      "action": "copy",
+      "source_sha256": "94f96eefadb1b0d315029753d4abc8a702a4a1a1f9488e3bab41aa5a571a7236",
+      "integrated_sha256": "94f96eefadb1b0d315029753d4abc8a702a4a1a1f9488e3bab41aa5a571a7236"
+    },
+    {
+      "path": "runs/detect/kingfisher-raccoon-2/traffic-light/train/BoxF1_curve.png",
+      "action": "copy",
+      "source_sha256": "ef3c494dd32f0766287788b66bd4e7375ae00cc3a8bdded09b162158d9d6a25e",
+      "integrated_sha256": "ef3c494dd32f0766287788b66bd4e7375ae00cc3a8bdded09b162158d9d6a25e"
+    },
+    {
+      "path": "runs/detect/kingfisher-raccoon-2/traffic-light/train/BoxPR_curve.png",
+      "action": "copy",
+      "source_sha256": "9f8c8d53faf34dfa62fe16397ff24d19108f481620c9b9758e3d4bda7a62391a",
+      "integrated_sha256": "9f8c8d53faf34dfa62fe16397ff24d19108f481620c9b9758e3d4bda7a62391a"
+    },
+    {
+      "path": "runs/detect/kingfisher-raccoon-2/traffic-light/train/BoxP_curve.png",
+      "action": "copy",
+      "source_sha256": "4ecdab63fbb1f0adf2dc3e37ef4aa0c043c66f631d8434a6c8ee1e10db7fd835",
+      "integrated_sha256": "4ecdab63fbb1f0adf2dc3e37ef4aa0c043c66f631d8434a6c8ee1e10db7fd835"
+    },
+    {
+      "path": "runs/detect/kingfisher-raccoon-2/traffic-light/train/BoxR_curve.png",
+      "action": "copy",
+      "source_sha256": "375a3c0417a61e799b307e7a669f90cf1d3158e6ec986f1cdcc6239a7d7ab298",
+      "integrated_sha256": "375a3c0417a61e799b307e7a669f90cf1d3158e6ec986f1cdcc6239a7d7ab298"
+    },
+    {
+      "path": "runs/detect/kingfisher-raccoon-2/traffic-light/train/confusion_matrix.png",
+      "action": "copy",
+      "source_sha256": "33eed52b4a049a56d331436255a1ebcf9e3a117ead49c499b43c2d31fe97e83f",
+      "integrated_sha256": "33eed52b4a049a56d331436255a1ebcf9e3a117ead49c499b43c2d31fe97e83f"
+    },
+    {
+      "path": "runs/detect/kingfisher-raccoon-2/traffic-light/train/confusion_matrix_normalized.png",
+      "action": "copy",
+      "source_sha256": "bfad93987e7c6f360369837ace247839354088bd4a4c1f8aacb43ae22eca7394",
+      "integrated_sha256": "bfad93987e7c6f360369837ace247839354088bd4a4c1f8aacb43ae22eca7394"
+    },
+    {
+      "path": "runs/detect/kingfisher-raccoon-2/traffic-light/train/labels.jpg",
+      "action": "copy",
+      "source_sha256": "9095afeea253a80ff103fd7287692ab52749348d03abe9ca08869205ea434174",
+      "integrated_sha256": "9095afeea253a80ff103fd7287692ab52749348d03abe9ca08869205ea434174"
+    },
+    {
+      "path": "runs/detect/kingfisher-raccoon-2/traffic-light/train/results.csv",
+      "action": "copy",
+      "source_sha256": "5a34400bb86921fc7d55d962e72cd9337b56ce381d5eb5028b8c2f83fe556fa5",
+      "integrated_sha256": "5a34400bb86921fc7d55d962e72cd9337b56ce381d5eb5028b8c2f83fe556fa5"
+    },
+    {
+      "path": "runs/detect/kingfisher-raccoon-2/traffic-light/train/results.png",
+      "action": "copy",
+      "source_sha256": "64b711c60899e694780d7dbc129dd6945a5f408c0e8e01ca462218d57826247c",
+      "integrated_sha256": "64b711c60899e694780d7dbc129dd6945a5f408c0e8e01ca462218d57826247c"
+    },
+    {
+      "path": "runs/detect/kingfisher-raccoon-2/traffic-light/train/train_batch0.jpg",
+      "action": "copy",
+      "source_sha256": "d32f79d0683b4411fa55bc5141869936b99d4a84b90df3766acfdd87c6ea0489",
+      "integrated_sha256": "d32f79d0683b4411fa55bc5141869936b99d4a84b90df3766acfdd87c6ea0489"
+    },
+    {
+      "path": "runs/detect/kingfisher-raccoon-2/traffic-light/train/train_batch1.jpg",
+      "action": "copy",
+      "source_sha256": "979435dc1c34a6ef5aca702143f5cda8cc7a92702d7b001b9554251880abc5d8",
+      "integrated_sha256": "979435dc1c34a6ef5aca702143f5cda8cc7a92702d7b001b9554251880abc5d8"
+    },
+    {
+      "path": "runs/detect/kingfisher-raccoon-2/traffic-light/train/train_batch2.jpg",
+      "action": "copy",
+      "source_sha256": "7f163d96473b6546332bab98d3d8e2f4fc5afb9e8295ddcf7dbb2221c7e663c7",
+      "integrated_sha256": "7f163d96473b6546332bab98d3d8e2f4fc5afb9e8295ddcf7dbb2221c7e663c7"
+    },
+    {
+      "path": "runs/detect/kingfisher-raccoon-2/traffic-light/train/val_batch0_labels.jpg",
+      "action": "copy",
+      "source_sha256": "4e8b1323ee92093798e2d439337405c54bb3b05c5c41bf7dc2063ea7346a3bba",
+      "integrated_sha256": "4e8b1323ee92093798e2d439337405c54bb3b05c5c41bf7dc2063ea7346a3bba"
+    },
+    {
+      "path": "runs/detect/kingfisher-raccoon-2/traffic-light/train/val_batch0_pred.jpg",
+      "action": "copy",
+      "source_sha256": "844ba2e1ada6df8526d79c4e3fa0833d8dfef5d6f154ab32a92b34892527bf8d",
+      "integrated_sha256": "844ba2e1ada6df8526d79c4e3fa0833d8dfef5d6f154ab32a92b34892527bf8d"
+    },
+    {
+      "path": "runs/detect/kingfisher-raccoon-2/traffic-light/train/weights/best.pt",
+      "action": "copy",
+      "source_sha256": "886ba2869805fa78c2c0e97b01e85cbff2ae0d93ff04fb219a8a342352d056d8",
+      "integrated_sha256": "886ba2869805fa78c2c0e97b01e85cbff2ae0d93ff04fb219a8a342352d056d8"
+    },
+    {
+      "path": "runs/detect/kingfisher-raccoon-2/traffic-light/train/weights/last.pt",
+      "action": "copy",
+      "source_sha256": "1601fa8b0378e4e561c7f8c81cebe4221f512b9d540220f0f18ce6b1c5379570",
+      "integrated_sha256": "1601fa8b0378e4e561c7f8c81cebe4221f512b9d540220f0f18ce6b1c5379570"
+    },
+    {
+      "path": "runs/detect/kingfisher-raccoon-2/traffic-light/train/weights/best_ncnn_model/metadata.yaml",
+      "action": "copy",
+      "source_sha256": "3983a3e76952ff126323ee26ae0f1742f4114f7228459d2d2aacff47d3192110",
+      "integrated_sha256": "3983a3e76952ff126323ee26ae0f1742f4114f7228459d2d2aacff47d3192110"
+    },
+    {
+      "path": "runs/detect/kingfisher-raccoon-2/traffic-light/train/weights/best_ncnn_model/model.ncnn.bin",
+      "action": "copy",
+      "source_sha256": "6cd77971d2a77ad130ab64f19202177489f7eaee885db48d3fbc83b42a182f10",
+      "integrated_sha256": "6cd77971d2a77ad130ab64f19202177489f7eaee885db48d3fbc83b42a182f10"
+    },
+    {
+      "path": "runs/detect/kingfisher-raccoon-2/traffic-light/train/weights/best_ncnn_model/model.ncnn.param",
+      "action": "copy",
+      "source_sha256": "6017086cb94f5017cc022d44ea30711eb8c0412523154ec1dcd3047091fccc14",
+      "integrated_sha256": "6017086cb94f5017cc022d44ea30711eb8c0412523154ec1dcd3047091fccc14"
+    },
+    {
+      "path": "runs/detect/kingfisher-raccoon-2/traffic-light/train/weights/best_ncnn_model/model_ncnn.py",
+      "action": "copy",
+      "source_sha256": "c62f759ad33d983248b43954b41006204d2c86e7ed83993455eb7e42bae0e1ba",
+      "integrated_sha256": "c62f759ad33d983248b43954b41006204d2c86e7ed83993455eb7e42bae0e1ba"
+    },
+    {
+      "path": "sim_runs/device_offset_left.mp4",
+      "action": "copy",
+      "source_sha256": "df2ad68e678f9767361ac441bb58e903c1b6d59aa5aa8283f7b96e09be1aaaa9",
+      "integrated_sha256": "df2ad68e678f9767361ac441bb58e903c1b6d59aa5aa8283f7b96e09be1aaaa9"
+    },
+    {
+      "path": "sim_runs/device_offset_right.mp4",
+      "action": "copy",
+      "source_sha256": "60f13c9cfa32a8642f89e64fbc0e68818578deea143d54bf03213475a8fdf8fe",
+      "integrated_sha256": "60f13c9cfa32a8642f89e64fbc0e68818578deea143d54bf03213475a8fdf8fe"
+    },
+    {
+      "path": "sim_runs/20261016-012607/summary.json",
+      "action": "copy",
+      "source_sha256": "6c2b9eb248ea468d340af890264b18fe07ebce4fc71599b5f657241329d66f50",
+      "integrated_sha256": "6c2b9eb248ea468d340af890264b18fe07ebce4fc71599b5f657241329d66f50"
+    },
+    {
+      "path": "sim_runs/20261016-012607/telemetry.csv",
+      "action": "copy",
+      "source_sha256": "d2966a4f8c3931f8663115a5266ee1c51e8ff8e0029102064685827dbd991984",
+      "integrated_sha256": "d2966a4f8c3931f8663115a5266ee1c51e8ff8e0029102064685827dbd991984"
+    },
+    {
+      "path": "sim_runs/20261016-012630/summary.json",
+      "action": "copy",
+      "source_sha256": "6c2b9eb248ea468d340af890264b18fe07ebce4fc71599b5f657241329d66f50",
+      "integrated_sha256": "6c2b9eb248ea468d340af890264b18fe07ebce4fc71599b5f657241329d66f50"
+    },
+    {
+      "path": "sim_runs/20261016-012630/telemetry.csv",
+      "action": "copy",
+      "source_sha256": "a2fe9c0cc0223726b06e15adb20538c765c37fb049ee68d9bbceb7d7776df0f0",
+      "integrated_sha256": "a2fe9c0cc0223726b06e15adb20538c765c37fb049ee68d9bbceb7d7776df0f0"
+    },
+    {
+      "path": "sim_runs/20261016-012723/summary.json",
+      "action": "copy",
+      "source_sha256": "ec56541c7af660eeab433da528b6663e29be0902dd612edc6c94d0fbc45f92e6",
+      "integrated_sha256": "ec56541c7af660eeab433da528b6663e29be0902dd612edc6c94d0fbc45f92e6"
+    },
+    {
+      "path": "sim_runs/20261016-012723/telemetry.csv",
+      "action": "copy",
+      "source_sha256": "85fb2b65a04b58361f9072be613fba7d1bf9a07e3fbc780f5071cc307e3f49d4",
+      "integrated_sha256": "85fb2b65a04b58361f9072be613fba7d1bf9a07e3fbc780f5071cc307e3f49d4"
+    },
+    {
+      "path": "sim_runs/20261016-012809/summary.json",
+      "action": "copy",
+      "source_sha256": "e91629b2be0b2fdb647c421aa7188e0e7f4888b3787546d451ccb1a0a924f991",
+      "integrated_sha256": "e91629b2be0b2fdb647c421aa7188e0e7f4888b3787546d451ccb1a0a924f991"
+    },
+    {
+      "path": "sim_runs/20261016-012809/telemetry.csv",
+      "action": "copy",
+      "source_sha256": "fb61204cf0d4f4d7b171b18fb4993316d21e51aacbd3b4231aa9e2bea95c35d3",
+      "integrated_sha256": "fb61204cf0d4f4d7b171b18fb4993316d21e51aacbd3b4231aa9e2bea95c35d3"
+    },
+    {
+      "path": "sim_runs/screenshots/device_offset_left_sheet.png",
+      "action": "copy",
+      "source_sha256": "c08d401b2072a5a44c5ad3e9a9e9a8b54caad4159ab8710fac71bad82a7f8cf2",
+      "integrated_sha256": "c08d401b2072a5a44c5ad3e9a9e9a8b54caad4159ab8710fac71bad82a7f8cf2"
+    },
+    {
+      "path": "sim_runs/screenshots/device_offset_left_t00.3s.png",
+      "action": "copy",
+      "source_sha256": "f0c80cad4460e9fe1820d6d10634cf8ed7988d7a43773f9802b847d2430a256b",
+      "integrated_sha256": "f0c80cad4460e9fe1820d6d10634cf8ed7988d7a43773f9802b847d2430a256b"
+    },
+    {
+      "path": "sim_runs/screenshots/device_offset_left_t02.5s.png",
+      "action": "copy",
+      "source_sha256": "4e8800fe5ecfa71bc956db527a1173a852d6e182ab59cc02e9d870b456459618",
+      "integrated_sha256": "4e8800fe5ecfa71bc956db527a1173a852d6e182ab59cc02e9d870b456459618"
+    },
+    {
+      "path": "sim_runs/screenshots/device_offset_left_t05.0s.png",
+      "action": "copy",
+      "source_sha256": "9a6a6b7943161bfe32564ccfc75015a099a36754b98aa0990ec8b57adbba0067",
+      "integrated_sha256": "9a6a6b7943161bfe32564ccfc75015a099a36754b98aa0990ec8b57adbba0067"
+    },
+    {
+      "path": "sim_runs/screenshots/device_offset_left_t20.0s.png",
+      "action": "copy",
+      "source_sha256": "8654484e45d1519ac0f7e913e719bcb501604f4e37021bdb884b68e73c4c02d2",
+      "integrated_sha256": "8654484e45d1519ac0f7e913e719bcb501604f4e37021bdb884b68e73c4c02d2"
+    },
+    {
+      "path": "sim_runs/screenshots/device_offset_right_sheet.png",
+      "action": "copy",
+      "source_sha256": "6a3c03aa3992c48f23fb971dfcfaf6af0c293e00762037644d287e4312a8f1f2",
+      "integrated_sha256": "6a3c03aa3992c48f23fb971dfcfaf6af0c293e00762037644d287e4312a8f1f2"
+    },
+    {
+      "path": "sim_runs/screenshots/device_offset_right_t00.3s.png",
+      "action": "copy",
+      "source_sha256": "ab9d41b2dd8ba1142280644bcb5e7e3caf37b69bfcaffcbbc64f1bc633539aeb",
+      "integrated_sha256": "ab9d41b2dd8ba1142280644bcb5e7e3caf37b69bfcaffcbbc64f1bc633539aeb"
+    },
+    {
+      "path": "sim_runs/screenshots/device_offset_right_t02.5s.png",
+      "action": "copy",
+      "source_sha256": "8a0fbca5f5517533fd794a1a7073d3435ca147f9a6b28c7e1dbe1210b1a80f99",
+      "integrated_sha256": "8a0fbca5f5517533fd794a1a7073d3435ca147f9a6b28c7e1dbe1210b1a80f99"
+    },
+    {
+      "path": "sim_runs/screenshots/device_offset_right_t05.0s.png",
+      "action": "copy",
+      "source_sha256": "e3cd1545ec73d908f85d7e9574a3ce35ba7342663de2472f571e94c99fe8d722",
+      "integrated_sha256": "e3cd1545ec73d908f85d7e9574a3ce35ba7342663de2472f571e94c99fe8d722"
+    },
+    {
+      "path": "sim_runs/screenshots/device_offset_right_t20.0s.png",
+      "action": "copy",
+      "source_sha256": "17f1b4b998ebec5fe392e803bacfc3c12d4f07a899b85c668de1da5617cb6e2e",
+      "integrated_sha256": "17f1b4b998ebec5fe392e803bacfc3c12d4f07a899b85c668de1da5617cb6e2e"
+    },
+    {
+      "path": "sim_runs/screenshots/offset_convergence.png",
+      "action": "copy",
+      "source_sha256": "e2839853f004dc404fa2d21df85a57539eb9313358413e5755c57473133107d3",
+      "integrated_sha256": "e2839853f004dc404fa2d21df85a57539eb9313358413e5755c57473133107d3"
+    },
+    {
+      "path": "sim_ue4/.gitignore",
+      "action": "copy",
+      "source_sha256": "08602916ec49280a312db030e3aa0b8889b47e92a0b80858eb5dcaa187e0f4e6",
+      "integrated_sha256": "08602916ec49280a312db030e3aa0b8889b47e92a0b80858eb5dcaa187e0f4e6"
+    },
+    {
+      "path": "sim_ue4/browser_validation.json",
+      "action": "copy",
+      "source_sha256": "71e3da3db1ab1d50624d9bd8337503768f3f4727791f3ba4898eb46763861fa6",
+      "integrated_sha256": "71e3da3db1ab1d50624d9bd8337503768f3f4727791f3ba4898eb46763861fa6"
+    },
+    {
+      "path": "sim_ue4/launch.ps1",
+      "action": "copy",
+      "source_sha256": "4b0025bdd5adcffc09c714ce3019a94efd2e90ce6777b998bfb689064716ef34",
+      "integrated_sha256": "4b0025bdd5adcffc09c714ce3019a94efd2e90ce6777b998bfb689064716ef34"
+    },
+    {
+      "path": "sim_ue4/README_ZH_TW.md",
+      "action": "copy",
+      "source_sha256": "60028aa77efeb6b31611370530f975145f069982314bc96b07f738bbe85afd59",
+      "integrated_sha256": "60028aa77efeb6b31611370530f975145f069982314bc96b07f738bbe85afd59"
+    },
+    {
+      "path": "sim_ue4/RoadScenes.uproject",
+      "action": "copy",
+      "source_sha256": "3b2f1f5ee04a56dae974d064d293ee40cc572b04e952eaaaa6e269dc396556f4",
+      "integrated_sha256": "3b2f1f5ee04a56dae974d064d293ee40cc572b04e952eaaaa6e269dc396556f4"
+    },
+    {
+      "path": "sim_ue4/scene_config.json",
+      "action": "copy",
+      "source_sha256": "b3c60e3482518fdff9a7853903caffd9245792b4103cab4584e42d68dc360075",
+      "integrated_sha256": "b3c60e3482518fdff9a7853903caffd9245792b4103cab4584e42d68dc360075"
+    },
+    {
+      "path": "sim_ue4/validation.json",
+      "action": "copy",
+      "source_sha256": "def85d377d919c94224ad1b9ae6d408243b6c14ef6257f560e31847fd9cb52f1",
+      "integrated_sha256": "def85d377d919c94224ad1b9ae6d408243b6c14ef6257f560e31847fd9cb52f1"
+    },
+    {
+      "path": "sim_ue4/Config/DefaultEngine.ini",
+      "action": "copy",
+      "source_sha256": "7948d677e0796f48ef02f02bb8103061cfaf40536b16fbd8185e23998a85dd25",
+      "integrated_sha256": "7948d677e0796f48ef02f02bb8103061cfaf40536b16fbd8185e23998a85dd25"
+    },
+    {
+      "path": "sim_ue4/Config/DefaultGame.ini",
+      "action": "copy",
+      "source_sha256": "e814c3c714695c823d036b1af0fe9eedc09d71cd9d2d8f94388eac09a0bfc6fc",
+      "integrated_sha256": "e814c3c714695c823d036b1af0fe9eedc09d71cd9d2d8f94388eac09a0bfc6fc"
+    },
+    {
+      "path": "sim_ue4/preview/browser_verified.png",
+      "action": "copy",
+      "source_sha256": "04c46650dab0c4607bfc89e7899f825b8465de38af7687fe5863b99a280c4e6b",
+      "integrated_sha256": "04c46650dab0c4607bfc89e7899f825b8465de38af7687fe5863b99a280c4e6b"
+    },
+    {
+      "path": "sim_ue4/preview/index.html",
+      "action": "copy",
+      "source_sha256": "b596a71648d89a84d430e89b9bf10e7bb011d6eac926e6ea74e75b83088c9af3",
+      "integrated_sha256": "b596a71648d89a84d430e89b9bf10e7bb011d6eac926e6ea74e75b83088c9af3"
+    },
+    {
+      "path": "sim_ue4/preview/layout_1.png",
+      "action": "copy",
+      "source_sha256": "1617afc40675b631b79b3bfeb323792c10e22182cf4b7dbbfd77e1fce90e86e8",
+      "integrated_sha256": "1617afc40675b631b79b3bfeb323792c10e22182cf4b7dbbfd77e1fce90e86e8"
+    },
+    {
+      "path": "sim_ue4/preview/layout_2.png",
+      "action": "copy",
+      "source_sha256": "5ebdf4376d433bb42df0941f7e6e98d4ecb3b093ae1e7cd4f6ef3a23a4c82914",
+      "integrated_sha256": "5ebdf4376d433bb42df0941f7e6e98d4ecb3b093ae1e7cd4f6ef3a23a4c82914"
+    },
+    {
+      "path": "sim_ue4/preview/layout_3.png",
+      "action": "copy",
+      "source_sha256": "034f240e3ef5d132ed98d44829d702036ba5146a2d5e2cc186975a3d9c2de156",
+      "integrated_sha256": "034f240e3ef5d132ed98d44829d702036ba5146a2d5e2cc186975a3d9c2de156"
+    },
+    {
+      "path": "sim_ue4/preview/scenes_contact.png",
+      "action": "copy",
+      "source_sha256": "dc4067379c53aadfc48be6ea5b1ba61047ce985660c9f7290c49bd8bb0b7f355",
+      "integrated_sha256": "dc4067379c53aadfc48be6ea5b1ba61047ce985660c9f7290c49bd8bb0b7f355"
+    },
+    {
+      "path": "sim_ue4/preview/scene_1.png",
+      "action": "copy",
+      "source_sha256": "10ffad9b8c2ee2ec6a4a0b668aea9e1bed1f23149eb3484e3d46d758e431de0c",
+      "integrated_sha256": "10ffad9b8c2ee2ec6a4a0b668aea9e1bed1f23149eb3484e3d46d758e431de0c"
+    },
+    {
+      "path": "sim_ue4/preview/scene_2.png",
+      "action": "copy",
+      "source_sha256": "6305d487a36b898b8afd506e5f0e76850eb36de60018675494dce0a5c8b29bf8",
+      "integrated_sha256": "6305d487a36b898b8afd506e5f0e76850eb36de60018675494dce0a5c8b29bf8"
+    },
+    {
+      "path": "sim_ue4/preview/scene_3.png",
+      "action": "copy",
+      "source_sha256": "8573af8d7037ed54a0efb46e6ebebf659b6edf29617d4615e94993f69caf5a22",
+      "integrated_sha256": "8573af8d7037ed54a0efb46e6ebebf659b6edf29617d4615e94993f69caf5a22"
+    },
+    {
+      "path": "sim_ue4/Source/RoadScenes.Target.cs",
+      "action": "copy",
+      "source_sha256": "a2f225d41f9129856a29e513b3e936d5d745e3037ec0e378bb810d70222efa56",
+      "integrated_sha256": "a2f225d41f9129856a29e513b3e936d5d745e3037ec0e378bb810d70222efa56"
+    },
+    {
+      "path": "sim_ue4/Source/RoadScenesEditor.Target.cs",
+      "action": "copy",
+      "source_sha256": "620d0c3a9ee999d24a1a4b123c50ba020f3547bcc626818961625edc4493d0c5",
+      "integrated_sha256": "620d0c3a9ee999d24a1a4b123c50ba020f3547bcc626818961625edc4493d0c5"
+    },
+    {
+      "path": "sim_ue4/tools/generate_scenes.py",
+      "action": "copy",
+      "source_sha256": "f59cb60d7c7938f70b3c5c57d8c252bac0611dcbc68be42ef1d171468647d896",
+      "integrated_sha256": "f59cb60d7c7938f70b3c5c57d8c252bac0611dcbc68be42ef1d171468647d896"
+    },
+    {
+      "path": "sim_ue4/tools/prepare_editor.py",
+      "action": "copy",
+      "source_sha256": "0c9376446e5de4da35723b4c830927939f9059fcf206a0f39216c4194c21b797",
+      "integrated_sha256": "0c9376446e5de4da35723b4c830927939f9059fcf206a0f39216c4194c21b797"
+    },
+    {
+      "path": "sim_ue4/tools/render_preview.py",
+      "action": "copy",
+      "source_sha256": "0dfd73706e1fc10ec4b970a6a2e8b686f132fa283b0146fc4c932a86f9fca6a5",
+      "integrated_sha256": "0dfd73706e1fc10ec4b970a6a2e8b686f132fa283b0146fc4c932a86f9fca6a5"
+    },
+    {
+      "path": "sim_ue4/tools/validate_scenes.py",
+      "action": "copy",
+      "source_sha256": "645f601284d0e8b268176bee28bc3c4a2d0b3e62bc6b71fee521a7ce8dc20c21",
+      "integrated_sha256": "645f601284d0e8b268176bee28bc3c4a2d0b3e62bc6b71fee521a7ce8dc20c21"
+    },
+    {
+      "path": "sim_ue4/Source/RoadScenes/RoadScenes.Build.cs",
+      "action": "copy",
+      "source_sha256": "eb917f5755eb554f76b548b1584ea43cad364541e11031cf5c3a31fa8824f67e",
+      "integrated_sha256": "eb917f5755eb554f76b548b1584ea43cad364541e11031cf5c3a31fa8824f67e"
+    },
+    {
+      "path": "sim_ue4/Source/RoadScenes/RoadScenes.cpp",
+      "action": "copy",
+      "source_sha256": "8cc8f8a7a02fe4a8c4c7ef71f14c90d4fb24a67c3f14015bb831913572b26f4c",
+      "integrated_sha256": "8cc8f8a7a02fe4a8c4c7ef71f14c90d4fb24a67c3f14015bb831913572b26f4c"
+    },
+    {
+      "path": "sim_ue4/Source/RoadScenes/RoadScenes.h",
+      "action": "copy",
+      "source_sha256": "ab3eae7aa7ebf1693031ddd2085adb6a438659efbe8cac40e91de39ebef6d45b",
+      "integrated_sha256": "ab3eae7aa7ebf1693031ddd2085adb6a438659efbe8cac40e91de39ebef6d45b"
+    },
+    {
+      "path": "sim_ue4/Content/Data/scene_1.json",
+      "action": "copy",
+      "source_sha256": "4a14e89c997cd9e9ad390b4df4b926951f4a9a440da97b3aea4440d8b08b433b",
+      "integrated_sha256": "4a14e89c997cd9e9ad390b4df4b926951f4a9a440da97b3aea4440d8b08b433b"
+    },
+    {
+      "path": "sim_ue4/Content/Data/scene_2.json",
+      "action": "copy",
+      "source_sha256": "a15d9df8593f1353a147881e3e37979ae960c979a38188e29001b3ed7ccd73ac",
+      "integrated_sha256": "a15d9df8593f1353a147881e3e37979ae960c979a38188e29001b3ed7ccd73ac"
+    },
+    {
+      "path": "sim_ue4/Content/Data/scene_3.json",
+      "action": "copy",
+      "source_sha256": "2617ed437b09c491b120a23637a374c621e1d7eaded40de0ff32ab52052ce8e2",
+      "integrated_sha256": "2617ed437b09c491b120a23637a374c621e1d7eaded40de0ff32ab52052ce8e2"
+    },
+    {
+      "path": "yolo26n-seg.pt",
+      "action": "copy",
+      "source_sha256": "361fbfabab285c3237700b6bb91d7ecfa602cd945fffda8dbe1242829b71e73f",
+      "integrated_sha256": "361fbfabab285c3237700b6bb91d7ecfa602cd945fffda8dbe1242829b71e73f"
+    },
+    {
+      "path": "Road_Area.v2i.yolo26.zip",
+      "action": "copy",
+      "source_sha256": "48ba62158c96a90a642c2682699996c32609c7f368eccd507b78ab67de027fe2",
+      "integrated_sha256": "48ba62158c96a90a642c2682699996c32609c7f368eccd507b78ab67de027fe2"
+    }
+  ],
+  "retained_at_source": [
+    ".venv",
+    "web-backup-20261020-171253",
+    "autocar-20261013-150023.h264",
+    "README.pdf",
+    "root duplicate course document",
+    "__pycache__"
+  ]
+}

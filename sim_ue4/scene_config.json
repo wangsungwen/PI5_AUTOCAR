@@ -1,0 +1,41 @@
+{
+  "units": "centimeters",
+  "calibration_status": "provisional_not_measured",
+  "room": {"length_cm": 800, "width_cm": 600, "wall_height_cm": 260},
+  "camera": {"height_cm": 15, "pitch_deg": -8, "fov_deg": 66},
+  "lane_width_cm": 58,
+  "tape_width_cm": 2.5,
+  "speed_cm_s": 35,
+  "turn_deg_s": 65,
+  "scenes": [
+    {
+      "id": 1,
+      "title": "Wood floor / broad curve",
+      "floor": "wood",
+      "light_intensity": 2400,
+      "control_points": [[70,180],[180,180],[310,210],[430,325],[570,400],[720,400]],
+      "has_signal": false,
+      "reference": "road_export/test/images/day01_000020*, day01_000025*, day01_000026*"
+    },
+    {
+      "id": 2,
+      "title": "Polished floor / reflection stress",
+      "floor": "gloss",
+      "light_intensity": 4200,
+      "control_points": [[70,280],[180,280],[310,200],[450,200],[580,320],[720,320]],
+      "has_signal": false,
+      "reference": "autocar-20260915-192627.h264, autocar-20260915-193311.h264"
+    },
+    {
+      "id": 3,
+      "title": "Traffic signal / stop-line test",
+      "floor": "tile",
+      "light_intensity": 2800,
+      "control_points": [[70,240],[180,240],[320,240],[460,240],[600,240],[720,240]],
+      "has_signal": true,
+      "signal_position": [430,294,0],
+      "stop_x_cm": 380,
+      "reference": "autocar-20261013-150023.h264, output2.mp4, 1151013.mp4"
+    }
+  ]
+}

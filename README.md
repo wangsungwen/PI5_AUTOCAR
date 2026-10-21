@@ -2,6 +2,22 @@
 
 Raspberry Pi 5 電腦視覺自走車專案，整合網頁車控、相機錄影、YOLO26 視覺推論與自動駕駛。
 
+## 2026-10-22 RoadTrain 整合版
+
+本目錄為板端、PC 網頁、道路／燈號訓練與推論的統一維護入口。
+已整合 RoadTrain 的程式、資料、權重與訓練紀錄，原始目錄保留供回溯。
+**本次修改尚未部署實車；下方板端驗證為歷史紀錄，不代表本版已通過硬體驗證。**
+
+- [整合範圍、修正、測試與部署設定](docs/ROADTRAIN_INTEGRATION_20261022.md)
+- [來源檔案與 SHA-256 清單](docs/ROADTRAIN_MERGE_MANIFEST.json)
+- [原 RoadTrain README](docs/ROADTRAIN_ORIGINAL_README.md)
+- 道路訓練：`training/road_reflection/`；燈號／停止標誌：`training/train_traffic.py`。
+- 資料與權重：`datasets/`、`runs/`、`weights/`，不納入原始碼 ZIP。
+- RoadTrain 模擬器來源：`sim_airsim/`、`sim_ue4/`；最終雙版本架構仍在獨立的 `RPI5_AutoCAR_AirSim_Pi5`。
+
+**模型檢查：** `baseline_v1-2/best.pt` 在本機 CPU、416 與 640 尺寸、confidence=0.3 的 5 張 test 影像均無有效道路觀測。
+請先核對權重、環境與資料，再進行板端驗證；這不是精度評估。
+
 ## 目錄
 
 - [專案文件與部署紀錄](#專案文件與部署紀錄)
@@ -33,6 +49,12 @@ python scripts/package_release.py
 
 若要依照實際製作順序逐章操作，請使用
 [Raspberry Pi 5 AutoCAR + YOLO26 從零實作教學手冊](docs/IMPLEMENTATION_TUTORIAL_ZH_TW.md)。
+
+道路影片抽幀、Roboflow 多邊形標記、反光增強與 YOLO26 訓練，請參閱
+[道路分割與反光改善實作課程](docs/ROAD_SEGMENTATION_REFLECTION_COURSE_ZH_TW.md)。
+
+紅黃綠燈資料標記、資料檢查、YOLO26 訓練與 Raspberry Pi 5 NCNN 部署，請參閱
+[紅黃綠燈辨識模型訓練流程](docs/TRAFFIC_LIGHT_TRAINING_ZH_TW.md)。
 
 ## 專案功能
 

@@ -2,6 +2,8 @@ __pycache__/
 *.py[cod]
 .pytest_cache/
 .venv/
+.venv-traffic/
+datasets/
 venv/
 .env
 .env.*
@@ -19,3 +21,8 @@ runs/
 *.log
 .build_artifacts/
 .codex-finalizer/
+
+# Local training assets and simulator bridge credentials
+.airsim-token
+sim_runs/
+Road_Area*.zip

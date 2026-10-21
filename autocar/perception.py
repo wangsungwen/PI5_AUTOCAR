@@ -22,16 +22,19 @@ class PIDController:
         self.integral = 0.0
         self.previous_error = 0.0
         self.previous_time = time.monotonic()
+        self._first_update = True
 
     def reset(self) -> None:
         self.integral = self.previous_error = 0.0
         self.previous_time = time.monotonic()
+        self._first_update = True
 
     def update(self, error: float, now: float | None = None) -> float:
         current = time.monotonic() if now is None else now
         dt = max(current - self.previous_time, 1e-4)
         self.integral = max(-self.windup, min(self.windup, self.integral + error * dt))
-        derivative = (error - self.previous_error) / dt
+        derivative = 0.0 if self._first_update else (error - self.previous_error) / dt
+        self._first_update = False
         output = self.kp * error + self.ki * self.integral + self.kd * derivative
         self.previous_error, self.previous_time = error, current
         return max(-self.max_output, min(self.max_output, output))
@@ -97,18 +100,24 @@ class YoloLaneDetector:
         result = self.model.predict(
             frame, imgsz=self.image_size, conf=self.confidence, device="cpu", verbose=False
         )[0]
+        names = self.model.names
+        labels = names.values() if isinstance(names, dict) else names
+        if self.class_name not in {str(label).lower() for label in labels}:
+            raise ValueError(f"Lane class {self.class_name!r} absent from model: {names}")
+        self.last_result = result
         if result.masks is None or result.boxes is None:
             return LaneObservation(0.0, 0.0, frame_center, frame_center)
 
         combined = np.zeros((height, width), dtype=np.uint8)
         confidences: list[float] = []
-        for box, raw_mask in zip(result.boxes, result.masks.data):
+        for box, polygon in zip(result.boxes, result.masks.xy):
             class_id = int(box.cls[0])
             if str(self.model.names[class_id]).lower() != self.class_name:
                 continue
-            mask = raw_mask.detach().cpu().numpy()
-            mask = cv2.resize(mask, (width, height), interpolation=cv2.INTER_NEAREST)
-            combined |= (mask >= 0.5).astype(np.uint8)
+            # xy coordinates undo inference letterboxing before mapping to the camera.
+            if len(polygon) < 3:
+                continue
+            cv2.fillPoly(combined, [np.rint(polygon).astype(np.int32)], 1)
             confidences.append(float(box.conf[0]))
 
         roi_y = max(0, min(height - 1, int(height * self.roi_start)))
@@ -134,6 +143,9 @@ class TrafficStateFilter:
         self.history.append(state)
         # A single red/stop observation must stop the car; release still needs votes.
         if state in {"RED", "STOP_SIGN"}:
+            # Votes collected before a hazard cannot release that hazard.
+            self.history.clear()
+            self.history.append(state)
             self.stable_state = state
             return self.stable_state
         winner, votes = Counter(self.history).most_common(1)[0]
@@ -157,11 +169,15 @@ class TrafficDetector:
 
     def detect(self, frame) -> tuple[str, float]:
         state, best_confidence = "NONE", 0.0
-        results = self.model.predict(frame, imgsz=self.image_size, conf=self.confidence, verbose=False)
+        results = self.model.predict(frame, imgsz=self.image_size, conf=self.confidence, device="cpu", verbose=False)
         aliases = {
             "red_light": "RED", "yellow_light": "YELLOW", "green_light": "GREEN",
             "stop_sign": "STOP_SIGN", "stop": "STOP_SIGN",
         }
+        names = self.model.names
+        labels = names.values() if isinstance(names, dict) else names
+        if not any(str(label).lower() in aliases for label in labels):
+            raise ValueError(f"Traffic model has no supported signal classes: {names}")
         for result in results:
             for box in result.boxes:
                 label = aliases.get(str(self.model.names[int(box.cls[0])]).lower())

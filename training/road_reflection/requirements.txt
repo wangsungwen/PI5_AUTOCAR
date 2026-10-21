@@ -1,0 +1,4 @@
+# Course environment only; keep the vehicle runtime separate.
+ultralytics>=8.4.0,<9
+albumentations==2.0.8
+PyYAML>=6,<7

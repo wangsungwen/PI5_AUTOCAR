@@ -6,7 +6,11 @@ function renderProfiles(d){const select=$('#detectionProfile'),selected=`${d.mod
 async function status(){try{render(await(await fetch('/api/status',{cache:'no-store'})).json())}catch(e){$('#connection').textContent='離線';$('#connection').classList.add('bad')}}
 function renderVehicle(v){
   $('#vehicle').textContent=v.enabled?'已啟用':'停用';
-  $('#direction').textContent=({stop:'停止',forward:'前進',left:'左彎',right:'右彎',auto:'自動'})[v.direction]||v.direction;
+  $('#direction').textContent=(v.gear==='reverse'&&v.direction!=='stop'?'倒車 · ':'')+(({stop:'停止',forward:'前進',reverse:'直行',left:'左彎',right:'右彎',auto:'自動'})[v.direction]||v.direction);
+  document.querySelectorAll('[data-gear]').forEach(el=>{
+    el.setAttribute('aria-pressed',String(el.dataset.gear===(v.gear||'forward')));
+    el.disabled=!v.enabled||v.direction==='auto'||!v.gear;
+  });
   $('#speedValue').textContent=v.direction==='auto'?'自動控制':`${v.speed_percent}%`;
   const angle=v.steering_degrees;
   $('#turnValue').textContent=v.direction==='auto'?'自動控制':angle===0?'0° 直行':`${angle<0?'左':'右'} ${Math.abs(angle)}°`;
@@ -22,7 +26,9 @@ function drive(dir){return control(async()=>{const v=await api('/api/vehicle/dri
 function stop(){state.keepAlive=false;return drive('stop')}
 document.querySelectorAll('[data-dir]').forEach(el=>el.addEventListener('click',()=>drive(el.dataset.dir)));
 $('#stop').onclick=stop;
+$('#globalStop').onclick=stop;
 $('#straight').onclick=()=>drive('center');
+document.querySelectorAll('[data-gear]').forEach(el=>el.onclick=()=>drive('gear_'+el.dataset.gear));
 $('#enable').onchange=e=>{const enabled=e.target.checked;control(async()=>{const v=await api('/api/vehicle/enable',{enabled});renderVehicle(v);state.keepAlive=enabled&&v.direction!=='stop'&&v.direction!=='auto'})};
 let heartbeatPending=false;
 setInterval(async()=>{
@@ -43,6 +49,7 @@ addEventListener('keydown',e=>{
   if(e.repeat)return;
   if(e.code==='Space'){e.preventDefault();stop();return}
   if(e.target.closest('input,select,textarea,[contenteditable="true"]'))return;
+  if(document.querySelector('[role=tab]:focus')||$('#page-drive').hidden)return;
   const dir=keys[e.key]||keys[e.key.toLowerCase()];
   if(dir){e.preventDefault();drive(dir)}
 });
@@ -55,3 +62,29 @@ preview.onerror=()=>{$('#previewState').textContent='無畫面';$('#previewError
 $('#retryPreview').onclick=reloadPreview;
 document.querySelectorAll('[data-gimbal]').forEach(el=>el.onclick=async()=>{try{await api('/api/gimbal/move',{axis:el.dataset.gimbal,delta:Number(el.dataset.delta)});status()}catch(e){showError(e)}});
 $('#gimbalCenter').onclick=async()=>{try{await api('/api/gimbal/center');status()}catch(e){showError(e)}};
+
+// Internal view changes preserve the current command and heartbeat.
+const pageTabs=[...document.querySelectorAll('[data-page]')];
+function selectPage(tab){
+  if(tab.getAttribute('aria-selected')==='true')return;
+
+  pageTabs.forEach(item=>{
+    const active=item===tab;
+    item.setAttribute('aria-selected',String(active));
+    item.tabIndex=active?0:-1;
+    document.getElementById(item.getAttribute('aria-controls')).hidden=!active;
+  });
+}
+pageTabs.forEach((tab,index)=>{
+  tab.onclick=()=>selectPage(tab);
+  tab.onkeydown=e=>{
+    let next;
+    if(e.key==='ArrowRight')next=(index+1)%pageTabs.length;
+    if(e.key==='ArrowLeft')next=(index+pageTabs.length-1)%pageTabs.length;
+    if(e.key==='Home')next=0;
+    if(e.key==='End')next=pageTabs.length-1;
+    if(next===undefined)return;
+    e.preventDefault();e.stopPropagation();
+    pageTabs[next].focus();selectPage(pageTabs[next]);
+  };
+});

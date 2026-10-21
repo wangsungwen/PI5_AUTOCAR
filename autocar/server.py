@@ -12,6 +12,7 @@ from .motor import MotorController
 from .gimbal import GimbalController
 from .autopilot import Autopilot
 from .detection_stream import DetectionStream
+from .sim_camera import SimCamera
 
 ROOT = Path(__file__).resolve().parent.parent
 WEB = ROOT / "web"
@@ -20,6 +21,7 @@ CAMERA = CameraRecorder(CONFIG.recordings_dir, CONFIG.camera_rotate_180, CONFIG.
 GIMBAL = GimbalController(CONFIG)
 AUTOPILOT = Autopilot(CONFIG, MOTOR, CAMERA)
 DETECTION = DetectionStream(CONFIG, CAMERA)
+SIM_CAMERA = SimCamera(CAMERA, ROOT / ".airsim-token", CONFIG.recordings_dir)
 
 
 class Handler(SimpleHTTPRequestHandler):
@@ -54,6 +56,19 @@ class Handler(SimpleHTTPRequestHandler):
                 self._detection_stream()
             else:
                 self._camera_stream()
+        elif path == "/api/sim/status":
+            self._json(200, SIM_CAMERA.status())
+        elif path in ("/api/sim/frame", "/api/sim/hood", "/api/sim/road"):
+            try:
+                source = path.rsplit("/", 1)[-1]
+                frame = SIM_CAMERA.request("/frame" if source == "frame" else "/frame/"+source)
+                self.send_response(200)
+                self.send_header("Content-Type", "image/jpeg")
+                self.send_header("Content-Length", str(len(frame)))
+                self.end_headers()
+                self.wfile.write(frame)
+            except RuntimeError as exc:
+                self._json(503, {"error": str(exc)})
         else:
             super().do_GET()
 
@@ -140,9 +155,15 @@ class Handler(SimpleHTTPRequestHandler):
                 body = self._body()
                 result = DETECTION.configure(str(body.get("model", "")), int(body.get("imgsz", 0)))
             elif path == "/api/camera/start":
+                if SIM_CAMERA.active:
+                    raise RuntimeError("同步側錄中，請使用同步側錄停止按鈕")
                 result = CAMERA.start()
             elif path == "/api/camera/stop":
-                result = CAMERA.stop()
+                result = SIM_CAMERA.stop() if SIM_CAMERA.active else CAMERA.stop()
+            elif path == "/api/recording/dual/start":
+                result = SIM_CAMERA.start(str(self._body().get("source", "fpv")))
+            elif path == "/api/recording/dual/stop":
+                result = SIM_CAMERA.stop()
             elif path == "/api/gimbal/move":
                 body = self._body()
                 result = GIMBAL.move(str(body.get("axis")), int(body.get("delta", 0)))

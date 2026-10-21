@@ -1,0 +1,35 @@
+{
+  "SeeDocsAt": "https://microsoft.github.io/AirSim/settings/",
+  "SettingsVersion": 1.2,
+  "SimMode": "Car",
+  "ClockSpeed": 1.0,
+  "ViewMode": "SpringArmChase",
+  "ApiServerPort": 41451,
+  "Vehicles": {
+    "PhysXCar": {
+      "VehicleType": "PhysXCar",
+      "DefaultVehicleState": "",
+      "AutoCreate": true,
+      "EnableCollisions": true,
+      "Cameras": {
+        "autocar_cam": {
+          "CaptureSettings": [
+            {
+              "ImageType": 0,
+              "Width": 640,
+              "Height": 480,
+              "FOV_Degrees": 66,
+              "AutoExposureSpeed": 100,
+              "MotionBlurAmount": 0
+            }
+          ],
+          "X": 0.60, "Y": 0.00, "Z": -1.40,
+          "Pitch": -12.0, "Roll": 0.0, "Yaw": 0.0
+        }
+      }
+    }
+  },
+  "SubWindows": [
+    { "WindowID": 0, "CameraName": "autocar_cam", "ImageType": 0, "VehicleName": "PhysXCar", "Visible": true }
+  ]
+}

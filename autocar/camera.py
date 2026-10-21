@@ -32,6 +32,7 @@ class CameraRecorder:
         self._lock = threading.RLock()
         self._camera = None
         self._jpeg_encoder = None
+        self._recording_encoder = None
         self._stream_output = StreamingOutput()
         self._recording = False
         self._file: Path | None = None
@@ -116,16 +117,17 @@ class CameraRecorder:
             from picamera2.outputs import FileOutput
 
             self._file = self._dir / f"autocar-{datetime.now():%Y%m%d-%H%M%S}.h264"
-            self._camera.start_encoder(
-                H264Encoder(bitrate=6_000_000), FileOutput(str(self._file)), name="main"
-            )
+            encoder = H264Encoder(bitrate=6_000_000)
+            self._camera.start_encoder(encoder, FileOutput(str(self._file)), name="main")
+            self._recording_encoder = encoder
             self._recording = True
             return self.status()
 
     def stop(self) -> dict:
         with self._lock:
             if self._recording and self._camera is not None:
-                self._camera.stop_encoder("main")
+                self._camera.stop_encoder(self._recording_encoder)
+                self._recording_encoder = None
             self._recording = False
             return self.status()
 
@@ -134,7 +136,8 @@ class CameraRecorder:
             self.stop()
             if self._camera is not None:
                 if self._jpeg_encoder is not None:
-                    self._camera.stop_encoder("lores")
+                    self._camera.stop_encoder(self._jpeg_encoder)
+                    self._jpeg_encoder = None
                 self._camera.stop()
                 self._camera.close()
             self._camera = None

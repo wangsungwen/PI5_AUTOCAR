@@ -1,0 +1,9 @@
+{
+  "geometry_validation": "passed",
+  "scenes": 3,
+  "ue4_compilation": "not_run_editor_and_cpp_toolchain_not_found",
+  "ue4_runtime_switching": "not_run",
+  "airsim_integration": "not_implemented",
+  "calibration": "provisional_not_measured",
+  "preview": "software_geometry_preview_not_ue4_render"
+}

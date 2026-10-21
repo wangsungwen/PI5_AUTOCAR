@@ -8,11 +8,20 @@ function element(selector) {
     dataset: {}, classList: {add(){}, remove(){}, toggle(){}},
     addEventListener(name, callback){this[name] = callback},
     closest(){return null}, textContent: '',
+    setAttribute(name,value){this[name]=value},
+    getAttribute(name){return this[name]},
   });
   return elements.get(selector);
 }
 const buttons = ['forward','backward','left','right'].map(direction => {
   const button = element(direction); button.dataset.dir = direction; return button;
+});
+const tabs=['drive','camera'].map((name,index)=>{
+  const tab=element('tab-'+name);
+  tab['aria-controls']='page-'+name;
+  tab['aria-selected']=String(index===0);
+  element('#page-'+name).hidden=index!==0;
+  return tab;
 });
 let vehicle = {enabled:false,direction:'stop',speed_percent:0,steering_degrees:0,
   speed_step:5,steering_step:5,steering_max:45,wheel_pwm:{A:0,B:0,C:0,D:0}};
@@ -20,8 +29,9 @@ const context = vm.createContext({
   console, Date, setTimeout(){},
   setInterval(fn,ms){intervals.push({fn,ms})},
   addEventListener(name,fn){listeners[name]=fn},
-  document:{hidden:false,querySelector:element,
-    querySelectorAll(selector){return selector==='[data-dir]'?buttons:[]},
+  document:{hidden:false,querySelector:s=>s==='[role=tab]:focus'?null:element(s),
+    getElementById:id=>element('#'+id),
+    querySelectorAll(selector){return selector==='[data-dir]'?buttons:selector==='[data-page]'?tabs:[]},
     addEventListener(name,fn){listeners[name]=fn}},
   async fetch(path, options){
     if(path==='/api/status') return {json:async()=>({vehicle,
@@ -57,12 +67,20 @@ function key(key,repeat=false,code=''){listeners.keydown({key,repeat,code,
   await heartbeat(); await heartbeat();
   assert.equal(vehicle.speed_percent,50);
   assert.equal(requests.filter(r=>r.path.endsWith('/heartbeat')).length,2);
+  const beforeTab=requests.length;
+  tabs[1].onclick(); await flush();
+  assert.equal(requests.length,beforeTab,'switching camera page must not stop the vehicle');
+  assert.equal(vehicle.speed_percent,50);
+  await heartbeat();
+  assert.equal(requests.at(-1).path,'/api/vehicle/heartbeat','heartbeat continues on camera page');
+  key('f'); await flush(); assert.equal(vehicle.speed_percent,50,'camera page does not accept drive shortcuts');
   key(' ',false,'Space'); await flush();
   assert.equal(vehicle.speed_percent,0);
   const count=requests.length; await heartbeat(); assert.equal(requests.length,count);
   // STOP must send a command even when no direction key is held.
   element('#stop').onclick(); await flush();
   assert.equal(requests.at(-1).body.direction,'stop');
+  tabs[0].onclick();
   key('f'); await flush(); assert.equal(vehicle.speed_percent,5);
   listeners.blur(); await flush(); assert.equal(vehicle.speed_percent,0);
   console.log('Manual UI: incremental keys, clicks, telemetry, heartbeat and STOP passed');

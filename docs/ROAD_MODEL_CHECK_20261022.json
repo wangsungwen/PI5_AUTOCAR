@@ -1,0 +1,85 @@
+{
+  "note": "Detection coverage only, not ground-truth accuracy. Windows CPU, PyTorch weights.",
+  "results": [
+    {
+      "image": "day01_000020_jpg.rf.e6541590bb124c0d6675750a866184ed.jpg",
+      "imgsz": 416,
+      "error": 0.0,
+      "confidence": 0.0,
+      "lane_center": 320,
+      "frame_center": 320
+    },
+    {
+      "image": "day01_000025_jpg.rf.1e6d319ec3ce1684329425038aeaea27.jpg",
+      "imgsz": 416,
+      "error": 0.0,
+      "confidence": 0.0,
+      "lane_center": 320,
+      "frame_center": 320
+    },
+    {
+      "image": "day01_000026_jpg.rf.210351f65b52ba735101c5df56ac8dbe.jpg",
+      "imgsz": 416,
+      "error": 0.0,
+      "confidence": 0.0,
+      "lane_center": 320,
+      "frame_center": 320
+    },
+    {
+      "image": "day01_000028_jpg.rf.12013e1cf10cff95526bcdb5eb618d46.jpg",
+      "imgsz": 416,
+      "error": 0.0,
+      "confidence": 0.0,
+      "lane_center": 320,
+      "frame_center": 320
+    },
+    {
+      "image": "day01_000030_jpg.rf.d187e02b356e0cbbb5e56fc44c064bb9.jpg",
+      "imgsz": 416,
+      "error": 0.0,
+      "confidence": 0.0,
+      "lane_center": 320,
+      "frame_center": 320
+    },
+    {
+      "image": "day01_000020_jpg.rf.e6541590bb124c0d6675750a866184ed.jpg",
+      "imgsz": 640,
+      "error": 0.0,
+      "confidence": 0.0,
+      "lane_center": 320,
+      "frame_center": 320
+    },
+    {
+      "image": "day01_000025_jpg.rf.1e6d319ec3ce1684329425038aeaea27.jpg",
+      "imgsz": 640,
+      "error": 0.0,
+      "confidence": 0.0,
+      "lane_center": 320,
+      "frame_center": 320
+    },
+    {
+      "image": "day01_000026_jpg.rf.210351f65b52ba735101c5df56ac8dbe.jpg",
+      "imgsz": 640,
+      "error": 0.0,
+      "confidence": 0.0,
+      "lane_center": 320,
+      "frame_center": 320
+    },
+    {
+      "image": "day01_000028_jpg.rf.12013e1cf10cff95526bcdb5eb618d46.jpg",
+      "imgsz": 640,
+      "error": 0.0,
+      "confidence": 0.0,
+      "lane_center": 320,
+      "frame_center": 320
+    },
+    {
+      "image": "day01_000030_jpg.rf.d187e02b356e0cbbb5e56fc44c064bb9.jpg",
+      "imgsz": 640,
+      "error": 0.0,
+      "confidence": 0.0,
+      "lane_center": 320,
+      "frame_center": 320
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+# AirSim Python client (v1.8.1). Install ORDER matters, see setup_airsim.ps1:
+#   1) pip install numpy msgpack-rpc-python setuptools wheel
+#   2) pip install --no-deps --no-build-isolation airsim==1.8.1
+# --no-deps: airsim's setup.py pulls opencv-contrib-python, which clashes with the
+#            opencv-python already used by this project (two cv2 packages).
+# --no-build-isolation: airsim's setup.py imports the package (needs numpy) at build time.
+numpy
+msgpack-rpc-python==0.4.1
+airsim==1.8.1
+# Already in requirements-autonomy.txt for the YOLO26 models:
+# ultralytics, opencv-python

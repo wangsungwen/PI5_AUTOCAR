@@ -3,15 +3,20 @@
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
   <title>Pi5 AutoCAR</title><link rel="stylesheet" href="/style.css"><link rel="stylesheet" href="/gimbal.css"><link rel="stylesheet" href="/autopilot.css"><link rel="stylesheet" href="/detection.css">
-</head>
+<link rel="stylesheet" href="/layout.css"></head>
 <body>
   <main>
-    <header><div><p class="eyebrow">RASPBERRY PI 5</p><h1>AutoCAR Control</h1></div><span id="connection" class="badge bad">離線</span></header>
+    <header><div><p class="eyebrow">RASPBERRY PI 5</p><h1>AutoCAR Control</h1></div><div class="header-actions"><span id="connection" class="badge bad">離線</span><button id="globalStop" class="emergency">■ 停止車體</button></div></header>
     <section class="card status"><div><small>車體</small><strong id="vehicle">停用</strong></div><div><small>方向</small><strong id="direction">STOP</strong></div><div><small>相機</small><strong id="camera">待機</strong></div></section>
-    <section class="card">
-      <div class="section-title"><h2>車體控制</h2><label class="switch"><input id="enable" type="checkbox"><span></span></label></div>
-      <p class="hint">啟用後四輪定速前進。F 加速、B 減速、L/R 逐步轉向；每按一次調整一格，放開維持設定。方向鍵／WASD 亦可操作，空白鍵急停。</p>
-      <div class="drive-metrics" aria-live="polite">
+    <nav class="page-tabs" role="tablist" aria-label="功能頁面">
+      <button id="tab-drive" role="tab" aria-controls="page-drive" aria-selected="true" data-page="drive">01 車體控制</button>
+      <button id="tab-camera" role="tab" aria-controls="page-camera" aria-selected="false" tabindex="-1" data-page="camera">02 相機與雲台</button>
+      <button id="tab-record" role="tab" aria-controls="page-record" aria-selected="false" tabindex="-1" data-page="record">03 錄影</button>
+      <button id="tab-auto" role="tab" aria-controls="page-auto" aria-selected="false" tabindex="-1" data-page="auto">04 自動駕駛</button>
+    </nav><section id="page-drive" role="tabpanel" aria-labelledby="tab-drive" class="card function-page drive-page">
+      <div class="section-title"><h2>車體控制</h2><label class="switch"><input id="enable" type="checkbox" aria-label="啟用車體"><span></span></label></div>
+      <p class="hint">啟用後預設前進。先選前進 D／倒車 R；F 加速、B 減速、L/R 逐步轉向；每按一次調整一格，放開維持設定。方向鍵／WASD 亦可操作，空白鍵急停。</p>
+      <div class="gear-selector" role="group" aria-label="行駛方向"><button data-gear="forward" aria-pressed="true" disabled>前進 D</button><button data-gear="reverse" aria-pressed="false" disabled>倒車 R</button><small>切換後停車，按 F＋起步；B−減速至零</small></div><div class="drive-metrics" aria-live="polite">
         <div><small>轉速設定（PWM）</small><strong id="speedValue">0%</strong></div>
         <div><small>轉向設定角度</small><strong id="turnValue">0° 直行</strong></div>
       </div>
@@ -26,15 +31,15 @@
         <button data-dir="backward" class="down" aria-label="B 減速">B −</button>
       </div>
       <button id="straight" class="straight">轉向歸零 · 直行</button>
-      <p class="hint">STOP 後 F 可從 0% 逐步起步；切換視窗、隱藏頁面或控制連線逾時會停止。</p>
+      <p class="hint">STOP 後 F 可從 0% 逐步起步；切換功能頁維持行駛；切換視窗、隱藏網頁或控制連線逾時會停止。各頁皆可按頂部停止或空白鍵。</p>
     </section>
-    <section class="card camera-view">
+    <section id="page-camera" role="tabpanel" aria-labelledby="tab-camera" class="card function-page camera-view" hidden>
       <div class="section-title detection-heading">
-        <div><h2>相機即時畫面</h2><p id="previewMode" class="hint compact">原始畫面 · 推論已關閉</p></div>
+        <div><h2>相機即時畫面</h2><label class="source-picker">影像來源 <select id="cameraSource"><option value="pi">Pi 相機與雲台</option><option value="ue4">UE4 車內第一人稱</option><option value="hood">UE4 車頭／引擎蓋</option><option value="road">UE4 前保險桿／道路</option></select></label><p id="previewMode" class="hint compact">原始畫面 · 推論已關閉</p></div>
         <div class="detection-toggle"><div class="detection-toggle-copy"><strong>視覺推論</strong><span id="previewState" class="camera-state">連線中</span></div><label class="switch" title="啟用或關閉 YOLO26 視覺推論"><input id="detection" type="checkbox" aria-label="視覺推論"><span></span></label></div>
       </div>
       <div class="preview-wrap">
-        <img id="preview" src="/api/camera/stream" alt="Pi Camera 即時畫面">
+        <img id="simPreview" alt="UE4 車內第一人稱即時畫面" hidden><p id="simNote" hidden></p><img id="preview" src="/api/camera/stream" alt="Pi Camera 即時畫面">
         <div id="previewError" class="preview-error" hidden><strong>無法取得相機畫面</strong><button id="retryPreview">重新連線</button></div>
       </div>
       <div class="detection-status"><span>推論 <strong id="detectionFps">已關閉</strong></span><span>物件 <strong id="detectionCount">—</strong></span><span class="detection-labels">辨識 <strong id="detectionLabels">顯示原始畫面</strong></span></div>
@@ -50,12 +55,12 @@
         </div>
       </div>
     </section>
-    <section class="card camera-card"><div><h2>Pi Camera 錄影</h2><p id="file" class="hint">尚未建立錄影</p></div><button id="record" class="record">● 開始錄影</button></section>
-    <section class="card auto-card">
-      <div class="section-title"><div><h2>自動駕駛</h2><p class="hint">車道 PID 高頻循跡；模型存在時同步辨識紅綠燈與停止標誌。</p></div><label class="switch"><input id="autopilot" type="checkbox"><span></span></label></div>
+    <section id="page-record" role="tabpanel" aria-labelledby="tab-record" class="card function-page camera-card" hidden><div class="dual-record-panel"><h2>Pi＋UE4 同步側錄</h2><p class="hint">一鍵啟停兩路影片，與目前預覽來源無關。Pi 存 H.264；Windows 存 UE4 AVI 與逐幀時間戳。屬軟體同步啟停，非逐幀鎖定。</p><label class="source-picker">UE4 側錄視角 <select id="recordView"><option value="fpv">車內第一人稱</option><option value="hood">車頭／引擎蓋</option><option value="road">前保險桿／道路</option></select></label><button id="dualRecord" class="record">● Pi＋UE4 同步側錄</button><p id="dualStatus" class="hint" role="status">檢查 UE4 連線…</p></div><div><h2>Pi Camera 錄影</h2><p id="file" class="hint">尚未建立錄影</p></div><button id="record" class="record">● 開始錄影</button></section>
+    <section id="page-auto" role="tabpanel" aria-labelledby="tab-auto" class="card function-page auto-card" hidden>
+      <div class="section-title"><div><h2>自動駕駛</h2><p class="hint">車道 PID 高頻循跡；模型存在時同步辨識紅綠燈與停止標誌。</p></div><label class="switch"><input id="autopilot" type="checkbox" aria-label="啟用自動駕駛"><span></span></label></div>
       <div class="auto-status"><span>號誌 <strong id="traffic">NONE</strong></span><span>車道信心 <strong id="laneConfidence">0%</strong></span><span>轉向 <strong id="steering">0.000</strong></span><span>FPS <strong id="autoFps">0</strong></span></div>
       <p id="autoError" class="hint"></p>
     </section>
     <p id="message" role="status"></p>
-  </main><script src="/app.js"></script>
+  </main><script src="/app.js"></script><script src="/sim-camera.js"></script>
 </body></html>
